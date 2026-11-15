@@ -1,135 +1,34 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
   <defs>
-    <style>
-      /* Fon va harflar uchun umumiy sozlamalar */
-      .bg { fill: #000000; }
-      
-      .letter {
-        font-family: 'Arial Black', 'Montserrat', sans-serif;
-        font-weight: 900;
-        fill: #ffffff;
-        font-size: 150px;
-        text-anchor: middle;
-        /* Boshlang'ich holat: harflar o'z joyida turadi */
-        transform: translate(0, 0); 
-        animation-fill-mode: forwards;
-        animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-      }
-
-      /* Pastdagi so'z (Time, Risk...) yozuvlari */
-      .word-text {
-        font-family: 'Arial Black', 'Montserrat', sans-serif;
-        font-weight: 900;
-        fill: #ffffff;
-        font-size: 70px;
-        text-anchor: middle;
-        opacity: 0; /* Boshida ko'rinmaydi */
-      }
-
-      /* =========================================
-         ANIMATSIYA KETMA-KETLIGI
-         ========================================= */
-
-      /* 1. T harfi pastga tushadi va Time so'zi chiqadi */
-      #t-letter { 
-        animation: dropDown 1s 0.5s, returnUp 1s 2.5s forwards; 
-      }
-      #w-time {
-        animation: showWord 0.5s 1.5s forwards, hideWord 0.5s 2.5s forwards;
-      }
-
-      /* 2. R harfi pastga tushadi va Risk so'zi chiqadi */
-      #r1-letter { 
-        animation: dropDown 1s 4.0s, returnUp 1s 6.0s forwards; 
-      }
-      #w-risk {
-        animation: showWord 0.5s 5.0s forwards, hideWord 0.5s 6.0s forwards;
-      }
-
-      /* 3. A harfi pastga tushadi va Analysis so'zi chiqadi */
-      #a-letter { 
-        animation: dropDown 1s 7.5s, returnUp 1s 9.5s forwards; 
-      }
-      #w-analysis {
-        animation: showWord 0.5s 8.5s forwards, hideWord 0.5s 9.5s forwards;
-      }
-
-      /* 4. D harfi pastga tushadi va Discipline so'zi chiqadi */
-      #d-letter { 
-        animation: dropDown 1s 11.0s, returnUp 1s 13.0s forwards; 
-      }
-      #w-discipline {
-        animation: showWord 0.5s 12.0s forwards, hideWord 0.5s 13.0s forwards;
-      }
-
-      /* 5. E harfi pastga tushadi va Emotion so'zi chiqadi */
-      #e-letter { 
-        animation: dropDown 1s 14.5s, returnUp 1s 16.5s forwards; 
-      }
-      #w-emotion {
-        animation: showWord 0.5s 15.5s forwards, hideWord 0.5s 16.5s forwards;
-      }
-
-      /* 6. R harfi pastga tushadi va Reward so'zi chiqadi */
-      #r2-letter { 
-        animation: dropDown 1s 18.0s, returnUp 1s 20.0s forwards; 
-      }
-      #w-reward {
-        animation: showWord 0.5s 19.0s forwards, hideWord 0.5s 20.0s forwards;
-      }
-
-      /* =========================================
-         ANIMATSIYA QOIDALARI
-         ========================================= */
-      
-      /* Harfning pastga (ekran markaziga) tushishi */
-      @keyframes dropDown {
-        0% { transform: translate(0, 0); }
-        100% { transform: translate(0, 450px); } /* Sizning koordinatalaringizga qarab hisoblanadi */
-      }
-
-      /* Harfning yana o'z joyiga (tepaga) qaytishi */
-      @keyframes returnUp {
-        0% { transform: translate(0, 450px); }
-        100% { transform: translate(0, 0); }
-      }
-
-      /* So'zning ko'rinishi va yo'qolishi */
-      @keyframes showWord {
-        0% { opacity: 0; }
-        100% { opacity: 1; }
-      }
-
-      @keyframes hideWord {
-        0% { opacity: 1; }
-        100% { opacity: 0; }
-      }
-    </style>
+    <!-- Harflar uchun oq rang va soya effekti -->
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.7"/>
+    </filter>
   </defs>
+  
+  <!-- Fon (Rasmni shu yerda qo'shishingiz mumkin) -->
+  <rect width="500" height="500" fill="#0a1128" rx="10"/>
 
-  <!-- Qora Fon -->
-  <rect class="bg" width="800" height="1200" />
-
-  <!-- ================= HARFLAR (Tepadagi boshlang'ich holat) ================= -->
-  <!-- Siz bergan aniq X, Y koordinatalari asosida -->
-  <g class="letter">
-    <text id="t-letter"  x="112" y="986">T</text>  <!-- 42 + 140/2 -->
-    <text id="r1-letter" x="230" y="908">R</text>  <!-- 150 + 160/2 -->
-    <text id="a-letter"  x="374" y="797">A</text>  <!-- 300 + 149/2 -->
-    <text id="d-letter"  x="506" y="675">D</text>  <!-- 430 + 153/2 -->
-    <text id="e-letter"  x="642" y="554">E</text>  <!-- 568 + 148/2 -->
-    <text id="r2-letter" x="761" y="461">R</text>  <!-- 685 + 152/2 -->
+  <!-- Harflar guruhi. Ular bitta to'g'ri chiziq bo'ylab (pastdan yuqoriga) joylashgan -->
+  <g font-family="Arial, sans-serif" font-weight="900" font-size="55" fill="#ffffff" filter="url(#shadow)">
+    
+    <!-- T harfi -->
+    <text x="30" y="420" transform="rotate(-40, 30, 420)">T</text>
+    
+    <!-- R harfi -->
+    <text x="100" y="360" transform="rotate(-40, 100, 360)">R</text>
+    
+    <!-- A harfi -->
+    <text x="170" y="300" transform="rotate(-40, 170, 300)">A</text>
+    
+    <!-- D harfi -->
+    <text x="240" y="240" transform="rotate(-40, 240, 240)">D</text>
+    
+    <!-- E harfi -->
+    <text x="310" y="180" transform="rotate(-40, 310, 180)">E</text>
+    
+    <!-- R harfi (oxirgi) -->
+    <text x="380" y="120" transform="rotate(-40, 380, 120)">R</text>
+    
   </g>
-
-  <!-- ================= PASTDAGI SO'ZLAR (O'rtada chiqadi) ================= -->
-  <g class="word-text">
-    <!-- y=700 - bu so'zlar paydo bo'ladigan pastki qator -->
-    <text id="w-time"       x="400" y="700">Time</text>
-    <text id="w-risk"       x="400" y="700">Risk</text>
-    <text id="w-analysis"   x="400" y="700">Analysis</text>
-    <text id="w-discipline" x="400" y="700">Discipline</text>
-    <text id="w-emotion"    x="400" y="700">Emotion</text>
-    <text id="w-reward"     x="400" y="700">Reward</text>
-  </g>
-
 </svg>
