@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" width="100%" height="100%">
+  <defs>
+    <style>
+      .letter {
+        font-family: 'Arial Black', 'Montserrat', sans-serif;
+        font-weight: 900;
+        fill: #ffffff;
+        font-size: 150px;
+        opacity: 0;
+        animation: appear 1s forwards;
+      }
+
+      /* Harflarning ketma-ket chiqish animatsiyasi */
+      @keyframes appear {
+        0% { opacity: 0; transform: translateY(30px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+
+      #t  { animation-delay: 0.5s; }
+      #r1 { animation-delay: 1.5s; }
+      #a  { animation-delay: 2.5s; }
+      #d  { animation-delay: 3.5s; }
+      #e  { animation-delay: 4.5s; }
+      #r2 { animation-delay: 5.5s; }
+    </style>
+  </defs>
+
+  <!-- 1. FON RASMI -->
+  <!-- xlink:href yoki href orqali 'trader.jpg' chaqiriladi -->
+  <image href="trader.jpg" x="0" y="0" width="800" height="1200" preserveAspectRatio="xMidYMid slice" />
+
+  <!-- 2. HARFLAR (Siz bergan aniq X, Y koordinatalari asosida) -->
+  <!-- T: X=42, Y=986 -->
+  <text id="t" x="42" y="986" class="letter">T</text>
+
+  <!-- R: X=150, Y=908 -->
+  <text id="r1" x="150" y="908" class="letter">R</text>
+
+  <!-- A: X=300, Y=797 -->
+  <text id="a" x="300" y="797" class="letter">A</text>
+
+  <!-- D: X=430, Y=675 -->
+  <text id="d" x="430" y="675" class="letter">D</text>
+
+  <!-- E: X=568, Y=554 -->
+  <text id="e" x="568" y="554" class="letter">E</text>
+
+  <!-- R: X=685, Y=461 -->
+  <text id="r2" x="685" y="461" class="letter">R</text>
+
+</svg>
