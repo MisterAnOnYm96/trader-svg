@@ -9,44 +9,62 @@
         animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
       }
 
-      /* Pastki qatordagi so'zlar */
       .base-word {
         text-anchor: middle;
         font-size: 70px;
       }
 
-      /* Tepaga uchuvchi harflar */
       .top-letter {
         text-anchor: middle;
         font-size: 150px; 
       }
 
       /* =========================================
-         ANIMATSIYA VAQTLARI
+         1. TIME
          ========================================= */
-      #w-time { animation: showWord 0.5s 0.2s forwards, hideWord 0.1s 1.2s forwards; }
-      #ime    { animation: hideWord 0.2s 1.0s forwards; }
-      #l-t    { animation: flyUpT 0.8s 1.2s forwards; }
+      /* So'z chiqadi (0.5s), 1.5s turadi, keyin o'chadi */
+      #w-time { animation: showWord 0.5s 0.2s forwards, hideWord 0.1s 1.7s forwards; }
+      
+      /* ime harflari sekinroq (0.5s ichida) so'nadi. T esa qoladi */
+      #ime    { animation: hideWord 0.5s 1.2s forwards; }
+      
+      /* T harfi ime o'chib bo'lgach (1.7s da) uchishni boshlaydi */
+      #l-t    { animation: flyUpT 0.8s 1.7s forwards; }
 
-      #w-risk { animation: showWord 0.5s 1.8s forwards, hideWord 0.1s 2.8s forwards; }
-      #isk    { animation: hideWord 0.2s 2.6s forwards; }
-      #l-r    { animation: flyUpR 0.8s 2.8s forwards; }
+      /* =========================================
+         2. RISK
+         ========================================= */
+      #w-risk { animation: showWord 0.5s 2.5s forwards, hideWord 0.1s 4.0s forwards; }
+      #isk    { animation: hideWord 0.5s 3.5s forwards; }
+      #l-r    { animation: flyUpR 0.8s 4.0s forwards; }
 
-      #w-analysis { animation: showWord 0.5s 3.4s forwards, hideWord 0.1s 4.4s forwards; }
-      #nalysis    { animation: hideWord 0.2s 4.2s forwards; }
-      #l-a        { animation: flyUpA 0.8s 4.4s forwards; }
+      /* =========================================
+         3. ANALYSIS
+         ========================================= */
+      #w-analysis { animation: showWord 0.5s 4.8s forwards, hideWord 0.1s 6.3s forwards; }
+      #nalysis    { animation: hideWord 0.5s 5.8s forwards; }
+      #l-a        { animation: flyUpA 0.8s 6.3s forwards; }
 
-      #w-discipline { animation: showWord 0.5s 5.0s forwards, hideWord 0.1s 6.0s forwards; }
-      #iscipline    { animation: hideWord 0.2s 5.8s forwards; }
-      #l-d          { animation: flyUpD 0.8s 6.0s forwards; }
+      /* =========================================
+         4. DISCIPLINE
+         ========================================= */
+      #w-discipline { animation: showWord 0.5s 7.1s forwards, hideWord 0.1s 8.6s forwards; }
+      #iscipline    { animation: hideWord 0.5s 8.1s forwards; }
+      #l-d          { animation: flyUpD 0.8s 8.6s forwards; }
 
-      #w-emotion { animation: showWord 0.5s 6.6s forwards, hideWord 0.1s 7.6s forwards; }
-      #motion    { animation: hideWord 0.2s 7.4s forwards; }
-      #l-e       { animation: flyUpE 0.8s 7.6s forwards; }
+      /* =========================================
+         5. EMOTION
+         ========================================= */
+      #w-emotion { animation: showWord 0.5s 9.4s forwards, hideWord 0.1s 10.9s forwards; }
+      #motion    { animation: hideWord 0.5s 10.4s forwards; }
+      #l-e       { animation: flyUpE 0.8s 10.9s forwards; }
 
-      #w-reward { animation: showWord 0.5s 8.2s forwards, hideWord 0.1s 9.2s forwards; }
-      #eward    { animation: hideWord 0.2s 9.0s forwards; }
-      #l-r2     { animation: flyUpR2 0.8s 9.2s forwards; }
+      /* =========================================
+         6. REWARD
+         ========================================= */
+      #w-reward { animation: showWord 0.5s 11.7s forwards, hideWord 0.1s 13.2s forwards; }
+      #eward    { animation: hideWord 0.5s 12.7s forwards; }
+      #l-r2     { animation: flyUpR2 0.8s 13.2s forwards; }
 
       /* ===== UMUMIY ANIMATSIYALAR ===== */
       @keyframes showWord {
@@ -60,40 +78,31 @@
       }
 
       /* ===== DIAGONAL HARAKATLAR ===== */
-      /* Harflar y=1100 dan boshlanib, siz bergan koordinatalarga uchadi.
-         Hisoblash formulasi: (Y_final - 1100) */
-
-      /* 1. T: (42 - 400 = -358), (986 - 1100 = -114) */
       @keyframes flyUpT {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(-358px, -114px); }
       }
 
-      /* 2. R: (170 - 400 = -230), (880 - 1100 = -220) */
       @keyframes flyUpR {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(-230px, -220px); }
       }
 
-      /* 3. A: (300 - 400 = -100), (797 - 1100 = -303) */
       @keyframes flyUpA {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(-100px, -303px); }
       }
 
-      /* 4. D: (430 - 400 = +30), (675 - 1100 = -425) */
       @keyframes flyUpD {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(30px, -425px); }
       }
 
-      /* 5. E: (568 - 400 = +168), (554 - 1100 = -546) */
       @keyframes flyUpE {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(168px, -546px); }
       }
 
-      /* 6. R: (685 - 400 = +285), (461 - 1100 = -639) */
       @keyframes flyUpR2 {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(285px, -639px); }
@@ -104,7 +113,7 @@
   <!-- FON RASMI -->
   <image href="trader.jpg" x="0" y="0" width="800" height="1200" preserveAspectRatio="xMidYMid slice" />
 
-  <!-- ================= PASTKI SO'ZLAR (y=1100 da, ya'ni harflar ostida) ================= -->
+  <!-- ================= PASTKI SO'ZLAR ================= -->
   <g class="base-word">
     <text id="w-time" x="400" y="1100">T<tspan id="ime">ime</tspan></text>
     <text id="w-risk" x="400" y="1100">R<tspan id="isk">isk</tspan></text>
@@ -114,7 +123,7 @@
     <text id="w-reward" x="400" y="1100">R<tspan id="eward">eward</tspan></text>
   </g>
 
-  <!-- ================= TEPAGA UCHUVCHI HARFLAR (y=1100 dan boshlanadi) ================= -->
+  <!-- ================= TEPAGA UCHUVCHI HARFLAR ================= -->
   <g class="top-letter">
     <text id="l-t"  x="400" y="1100">T</text>
     <text id="l-r"  x="400" y="1100">R</text>
