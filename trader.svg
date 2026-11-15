@@ -1,40 +1,144 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" width="100%" height="100%">
   <defs>
-    <!-- Harflarga soya berish uchun -->
-    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="3" dy="5" stdDeviation="4" flood-color="#000" flood-opacity="0.8"/>
-    </filter>
-  </defs>
-  
-  <!-- Orqa fon (ixtiyoriy, xohlasangiz o'chirib tashlashingiz mumkin) -->
-  <rect width="600" height="600" fill="#0a1128" rx="20"/>
+    <style>
+      text {
+        font-family: 'Arial Black', 'Montserrat', sans-serif;
+        font-weight: 900;
+        fill: #ffffff;
+        opacity: 0;
+        animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
 
-  <!-- Harflar guruhi. Hammasi bitta chiziq bo'ylab joylashgan -->
-  <g font-family="Arial, sans-serif" font-weight="900" font-size="50" fill="#ffffff" filter="url(#shadow)">
-    
-    <!-- T -->
-    <text x="20" y="550" transform="rotate(-40, 20, 550)">T</text>
-    <!-- R -->
-    <text x="80" y="500" transform="rotate(-40, 80, 500)">R</text>
-    <!-- A -->
-    <text x="140" y="450" transform="rotate(-40, 140, 450)">A</text>
-    <!-- D -->
-    <text x="200" y="400" transform="rotate(-40, 200, 400)">D</text>
-    <!-- E -->
-    <text x="260" y="350" transform="rotate(-40, 260, 350)">E</text>
-    <!-- R -->
-    <text x="320" y="300" transform="rotate(-40, 320, 300)">R</text>
-    
-    <!-- Bo'sh joy (TIME so'zi boshlanishidan oldin) -->
-    
-    <!-- T -->
-    <text x="390" y="240" transform="rotate(-40, 390, 240)">T</text>
-    <!-- I -->
-    <text x="430" y="205" transform="rotate(-40, 430, 205)">I</text>
-    <!-- M -->
-    <text x="480" y="160" transform="rotate(-40, 480, 160)">M</text>
-    <!-- E -->
-    <text x="550" y="100" transform="rotate(-40, 550, 100)">E</text>
-    
+      /* Pastki qatordagi so'zlar markazda boshlanadi */
+      .base-word {
+        text-anchor: middle;
+        font-size: 70px;
+      }
+
+      /* Tepaga uchuvchi harflar siz bergan o'lchamda */
+      .top-letter {
+        text-anchor: middle;
+        font-size: 150px; 
+      }
+
+      /* =========================================
+         1. TIME
+         ========================================= */
+      #w-time { animation: showWord 0.5s 0.2s forwards, hideWord 0.1s 1.2s forwards; }
+      #ime    { animation: hideWord 0.2s 1.0s forwards; }
+      /* T harfi x=400 dan siz bergan x=42, y=986 ga uchadi */
+      #l-t    { animation: flyUpT 0.8s 1.2s forwards; }
+
+      /* =========================================
+         2. RISK
+         ========================================= */
+      #w-risk { animation: showWord 0.5s 1.8s forwards, hideWord 0.1s 2.8s forwards; }
+      #isk    { animation: hideWord 0.2s 2.6s forwards; }
+      #l-r    { animation: flyUpR 0.8s 2.8s forwards; }
+
+      /* =========================================
+         3. ANALYSIS
+         ========================================= */
+      #w-analysis { animation: showWord 0.5s 3.4s forwards, hideWord 0.1s 4.4s forwards; }
+      #nalysis    { animation: hideWord 0.2s 4.2s forwards; }
+      #l-a        { animation: flyUpA 0.8s 4.4s forwards; }
+
+      /* =========================================
+         4. DISCIPLINE
+         ========================================= */
+      #w-discipline { animation: showWord 0.5s 5.0s forwards, hideWord 0.1s 6.0s forwards; }
+      #iscipline    { animation: hideWord 0.2s 5.8s forwards; }
+      #l-d          { animation: flyUpD 0.8s 6.0s forwards; }
+
+      /* =========================================
+         5. EMOTION
+         ========================================= */
+      #w-emotion { animation: showWord 0.5s 6.6s forwards, hideWord 0.1s 7.6s forwards; }
+      #motion    { animation: hideWord 0.2s 7.4s forwards; }
+      #l-e       { animation: flyUpE 0.8s 7.6s forwards; }
+
+      /* =========================================
+         6. REWARD
+         ========================================= */
+      #w-reward { animation: showWord 0.5s 8.2s forwards, hideWord 0.1s 9.2s forwards; }
+      #eward    { animation: hideWord 0.2s 9.0s forwards; }
+      #l-r2     { animation: flyUpR2 0.8s 9.2s forwards; }
+
+      /* ===== UMUMIY ANIMATSIYALAR ===== */
+      @keyframes showWord {
+        0% { opacity: 0; transform: translateY(10px); }
+        100% { opacity: 1; transform: translateY(0); }
+      }
+
+      @keyframes hideWord {
+        0% { opacity: 1; }
+        100% { opacity: 0; }
+      }
+
+      /* ===== DIAGONAL HARAKATLAR ===== */
+      /* Harflar x=400, y=900 dan boshlanib, siz bergan koordinatalarga uchadi.
+         translate(X, Y) formulasi: X_final - X_boshlanish, Y_final - Y_boshlanish */
+
+      /* 1. T: (42 - 400 = -358), (986 - 900 = +86) */
+      @keyframes flyUpT {
+        0% { opacity: 1; transform: translate(0, 0); }
+        100% { opacity: 1; transform: translate(-358px, 86px); }
+      }
+
+      /* 2. R: (150 - 400 = -250), (908 - 900 = +8) */
+      @keyframes flyUpR {
+        0% { opacity: 1; transform: translate(0, 0); }
+        100% { opacity: 1; transform: translate(-250px, 8px); }
+      }
+
+      /* 3. A: (300 - 400 = -100), (797 - 900 = -103) */
+      @keyframes flyUpA {
+        0% { opacity: 1; transform: translate(0, 0); }
+        100% { opacity: 1; transform: translate(-100px, -103px); }
+      }
+
+      /* 4. D: (430 - 400 = +30), (675 - 900 = -225) */
+      @keyframes flyUpD {
+        0% { opacity: 1; transform: translate(0, 0); }
+        100% { opacity: 1; transform: translate(30px, -225px); }
+      }
+
+      /* 5. E: (568 - 400 = +168), (554 - 900 = -346) */
+      @keyframes flyUpE {
+        0% { opacity: 1; transform: translate(0, 0); }
+        100% { opacity: 1; transform: translate(168px, -346px); }
+      }
+
+      /* 6. R: (685 - 400 = +285), (461 - 900 = -439) */
+      @keyframes flyUpR2 {
+        0% { opacity: 1; transform: translate(0, 0); }
+        100% { opacity: 1; transform: translate(285px, -439px); }
+      }
+    </style>
+  </defs>
+
+  <!-- FON RASMI (trader.jpg bilan bir papkada bo'lishi shart) -->
+  <image href="trader.jpg" x="0" y="0" width="800" height="1200" preserveAspectRatio="xMidYMid slice" />
+
+  <!-- ================= PASTKI SO'ZLAR (x=400 markaz) ================= -->
+  <g class="base-word">
+    <text id="w-time" x="400" y="900">T<tspan id="ime">ime</tspan></text>
+    <text id="w-risk" x="400" y="900">R<tspan id="isk">isk</tspan></text>
+    <text id="w-analysis" x="400" y="900">A<tspan id="nalysis">nalysis</tspan></text>
+    <text id="w-discipline" x="400" y="900">D<tspan id="iscipline">iscipline</tspan></text>
+    <text id="w-emotion" x="400" y="900">E<tspan id="motion">motion</tspan></text>
+    <text id="w-reward" x="400" y="900">R<tspan id="eward">eward</tspan></text>
   </g>
+
+  <!-- ================= TEPAGA UCHUVCHI HARFLAR ================= -->
+  <!-- Ular x=400, y=900 dan boshlanadi. Animatsiya ularni siz bergan koordinatalarga olib boradi -->
+  <g class="top-letter">
+    <text id="l-t"  x="400" y="900">T</text>
+    <text id="l-r"  x="400" y="900">R</text>
+    <text id="l-a"  x="400" y="900">A</text>
+    <text id="l-d"  x="400" y="900">D</text>
+    <text id="l-e"  x="400" y="900">E</text>
+    <text id="l-r2" x="400" y="900">R</text>
+  </g>
+
 </svg>
