@@ -64,11 +64,10 @@
         100% { opacity: 1; }
       }
 
-      /* Qo'shimcha harflarni yo'qotish va o'rnini bo'shatish */
+      /* Qo'shimcha qism shunchaki ko'rinmaydi, lekin o'rnini saqlab turadi (markazga sakrashni oldini oladi) */
       @keyframes hideSuffix {
         0%   { opacity: 1; }
-        99%  { opacity: 0; }
-        100% { opacity: 0; display: none; }
+        100% { opacity: 0; }
       }
 
       @keyframes pulse {
@@ -77,8 +76,7 @@
       }
 
       /* =========================================
-         AYNAN O'SHA HARFNING TEPAGA KO'TARILISHI
-         (75px dan 160px ga tenglashadi va teng masofada joylashadi)
+         HARFNING O'Z JOYIDAN TEPAGA KO'TARILISHI
          ========================================= */
 
       /* T: (-300, -50) */
@@ -122,7 +120,7 @@
   <!-- ORQA FON RASMI -->
   
 
-  <!-- YAGONA ELEMENTLAR: So'z chiqadi -> davomi o'chadi -> bosh harfning o'zi tepaga uchadi -->
+  <!-- ASOSIY SO'ZLAR -->
   <g class="base-word">
     <text id="w-time" x="400" y="1050" class="glow-t">T<tspan id="ime">ime</tspan></text>
     <text id="w-risk" x="400" y="1050" class="glow-r">R<tspan id="isk">isk</tspan></text>
