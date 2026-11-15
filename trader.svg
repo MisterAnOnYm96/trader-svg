@@ -9,57 +9,39 @@
         animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
       }
 
-      /* Pastki qatordagi so'zlar markazda boshlanadi */
       .base-word {
         text-anchor: middle;
         font-size: 70px;
       }
 
-      /* Tepaga uchuvchi harflar siz bergan o'lchamda */
       .top-letter {
         text-anchor: middle;
         font-size: 150px; 
       }
 
       /* =========================================
-         1. TIME
+         ANIMATSIYA VAQTLARI
          ========================================= */
       #w-time { animation: showWord 0.5s 0.2s forwards, hideWord 0.1s 1.2s forwards; }
       #ime    { animation: hideWord 0.2s 1.0s forwards; }
-      /* T harfi x=400 dan siz bergan x=42, y=986 ga uchadi */
       #l-t    { animation: flyUpT 0.8s 1.2s forwards; }
 
-      /* =========================================
-         2. RISK
-         ========================================= */
       #w-risk { animation: showWord 0.5s 1.8s forwards, hideWord 0.1s 2.8s forwards; }
       #isk    { animation: hideWord 0.2s 2.6s forwards; }
       #l-r    { animation: flyUpR 0.8s 2.8s forwards; }
 
-      /* =========================================
-         3. ANALYSIS
-         ========================================= */
       #w-analysis { animation: showWord 0.5s 3.4s forwards, hideWord 0.1s 4.4s forwards; }
       #nalysis    { animation: hideWord 0.2s 4.2s forwards; }
       #l-a        { animation: flyUpA 0.8s 4.4s forwards; }
 
-      /* =========================================
-         4. DISCIPLINE
-         ========================================= */
       #w-discipline { animation: showWord 0.5s 5.0s forwards, hideWord 0.1s 6.0s forwards; }
       #iscipline    { animation: hideWord 0.2s 5.8s forwards; }
       #l-d          { animation: flyUpD 0.8s 6.0s forwards; }
 
-      /* =========================================
-         5. EMOTION
-         ========================================= */
       #w-emotion { animation: showWord 0.5s 6.6s forwards, hideWord 0.1s 7.6s forwards; }
       #motion    { animation: hideWord 0.2s 7.4s forwards; }
       #l-e       { animation: flyUpE 0.8s 7.6s forwards; }
 
-      /* =========================================
-         6. REWARD
-         ========================================= */
       #w-reward { animation: showWord 0.5s 8.2s forwards, hideWord 0.1s 9.2s forwards; }
       #eward    { animation: hideWord 0.2s 9.0s forwards; }
       #l-r2     { animation: flyUpR2 0.8s 9.2s forwards; }
@@ -76,8 +58,7 @@
       }
 
       /* ===== DIAGONAL HARAKATLAR ===== */
-      /* Harflar x=400, y=900 dan boshlanib, siz bergan koordinatalarga uchadi.
-         translate(X, Y) formulasi: X_final - X_boshlanish, Y_final - Y_boshlanish */
+      /* Barcha harflar x=400, y=900 dan boshlanadi */
 
       /* 1. T: (42 - 400 = -358), (986 - 900 = +86) */
       @keyframes flyUpT {
@@ -85,10 +66,11 @@
         100% { opacity: 1; transform: translate(-358px, 86px); }
       }
 
-      /* 2. R: (150 - 400 = -250), (908 - 900 = +8) */
+      /* 2. R (O'zgartirildi): X=170, Y=880 */
+      /* Hisoblash: (170 - 400 = -230), (880 - 900 = -20) */
       @keyframes flyUpR {
         0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(-250px, 8px); }
+        100% { opacity: 1; transform: translate(-230px, -20px); }
       }
 
       /* 3. A: (300 - 400 = -100), (797 - 900 = -103) */
@@ -117,10 +99,10 @@
     </style>
   </defs>
 
-  <!-- FON RASMI (trader.jpg bilan bir papkada bo'lishi shart) -->
+  <!-- FON RASMI -->
   <image href="trader.jpg" x="0" y="0" width="800" height="1200" preserveAspectRatio="xMidYMid slice" />
 
-  <!-- ================= PASTKI SO'ZLAR (x=400 markaz) ================= -->
+  <!-- ================= PASTKI SO'ZLAR ================= -->
   <g class="base-word">
     <text id="w-time" x="400" y="900">T<tspan id="ime">ime</tspan></text>
     <text id="w-risk" x="400" y="900">R<tspan id="isk">isk</tspan></text>
@@ -131,7 +113,6 @@
   </g>
 
   <!-- ================= TEPAGA UCHUVCHI HARFLAR ================= -->
-  <!-- Ular x=400, y=900 dan boshlanadi. Animatsiya ularni siz bergan koordinatalarga olib boradi -->
   <g class="top-letter">
     <text id="l-t"  x="400" y="900">T</text>
     <text id="l-r"  x="400" y="900">R</text>
