@@ -9,11 +9,13 @@
         animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
       }
 
+      /* Pastki qatordagi so'zlar */
       .base-word {
         text-anchor: middle;
         font-size: 70px;
       }
 
+      /* Tepaga uchuvchi harflar */
       .top-letter {
         text-anchor: middle;
         font-size: 150px; 
@@ -58,43 +60,43 @@
       }
 
       /* ===== DIAGONAL HARAKATLAR ===== */
-      /* Barcha harflar x=400, y=900 dan boshlanadi */
+      /* Harflar y=1100 dan boshlanib, siz bergan koordinatalarga uchadi.
+         Hisoblash formulasi: (Y_final - 1100) */
 
-      /* 1. T: (42 - 400 = -358), (986 - 900 = +86) */
+      /* 1. T: (42 - 400 = -358), (986 - 1100 = -114) */
       @keyframes flyUpT {
         0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(-358px, 86px); }
+        100% { opacity: 1; transform: translate(-358px, -114px); }
       }
 
-      /* 2. R (O'zgartirildi): X=170, Y=880 */
-      /* Hisoblash: (170 - 400 = -230), (880 - 900 = -20) */
+      /* 2. R: (170 - 400 = -230), (880 - 1100 = -220) */
       @keyframes flyUpR {
         0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(-230px, -20px); }
+        100% { opacity: 1; transform: translate(-230px, -220px); }
       }
 
-      /* 3. A: (300 - 400 = -100), (797 - 900 = -103) */
+      /* 3. A: (300 - 400 = -100), (797 - 1100 = -303) */
       @keyframes flyUpA {
         0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(-100px, -103px); }
+        100% { opacity: 1; transform: translate(-100px, -303px); }
       }
 
-      /* 4. D: (430 - 400 = +30), (675 - 900 = -225) */
+      /* 4. D: (430 - 400 = +30), (675 - 1100 = -425) */
       @keyframes flyUpD {
         0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(30px, -225px); }
+        100% { opacity: 1; transform: translate(30px, -425px); }
       }
 
-      /* 5. E: (568 - 400 = +168), (554 - 900 = -346) */
+      /* 5. E: (568 - 400 = +168), (554 - 1100 = -546) */
       @keyframes flyUpE {
         0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(168px, -346px); }
+        100% { opacity: 1; transform: translate(168px, -546px); }
       }
 
-      /* 6. R: (685 - 400 = +285), (461 - 900 = -439) */
+      /* 6. R: (685 - 400 = +285), (461 - 1100 = -639) */
       @keyframes flyUpR2 {
         0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(285px, -439px); }
+        100% { opacity: 1; transform: translate(285px, -639px); }
       }
     </style>
   </defs>
@@ -102,24 +104,24 @@
   <!-- FON RASMI -->
   <image href="trader.jpg" x="0" y="0" width="800" height="1200" preserveAspectRatio="xMidYMid slice" />
 
-  <!-- ================= PASTKI SO'ZLAR ================= -->
+  <!-- ================= PASTKI SO'ZLAR (y=1100 da, ya'ni harflar ostida) ================= -->
   <g class="base-word">
-    <text id="w-time" x="400" y="900">T<tspan id="ime">ime</tspan></text>
-    <text id="w-risk" x="400" y="900">R<tspan id="isk">isk</tspan></text>
-    <text id="w-analysis" x="400" y="900">A<tspan id="nalysis">nalysis</tspan></text>
-    <text id="w-discipline" x="400" y="900">D<tspan id="iscipline">iscipline</tspan></text>
-    <text id="w-emotion" x="400" y="900">E<tspan id="motion">motion</tspan></text>
-    <text id="w-reward" x="400" y="900">R<tspan id="eward">eward</tspan></text>
+    <text id="w-time" x="400" y="1100">T<tspan id="ime">ime</tspan></text>
+    <text id="w-risk" x="400" y="1100">R<tspan id="isk">isk</tspan></text>
+    <text id="w-analysis" x="400" y="1100">A<tspan id="nalysis">nalysis</tspan></text>
+    <text id="w-discipline" x="400" y="1100">D<tspan id="iscipline">iscipline</tspan></text>
+    <text id="w-emotion" x="400" y="1100">E<tspan id="motion">motion</tspan></text>
+    <text id="w-reward" x="400" y="1100">R<tspan id="eward">eward</tspan></text>
   </g>
 
-  <!-- ================= TEPAGA UCHUVCHI HARFLAR ================= -->
+  <!-- ================= TEPAGA UCHUVCHI HARFLAR (y=1100 dan boshlanadi) ================= -->
   <g class="top-letter">
-    <text id="l-t"  x="400" y="900">T</text>
-    <text id="l-r"  x="400" y="900">R</text>
-    <text id="l-a"  x="400" y="900">A</text>
-    <text id="l-d"  x="400" y="900">D</text>
-    <text id="l-e"  x="400" y="900">E</text>
-    <text id="l-r2" x="400" y="900">R</text>
+    <text id="l-t"  x="400" y="1100">T</text>
+    <text id="l-r"  x="400" y="1100">R</text>
+    <text id="l-a"  x="400" y="1100">A</text>
+    <text id="l-d"  x="400" y="1100">D</text>
+    <text id="l-e"  x="400" y="1100">E</text>
+    <text id="l-r2" x="400" y="1100">R</text>
   </g>
 
 </svg>
