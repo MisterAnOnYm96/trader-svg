@@ -1,34 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="100%" height="100%">
   <defs>
-    <!-- Harflar uchun oq rang va soya effekti -->
+    <!-- Harflarga soya berish uchun -->
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="2" dy="4" stdDeviation="3" flood-color="#000" flood-opacity="0.7"/>
+      <feDropShadow dx="3" dy="5" stdDeviation="4" flood-color="#000" flood-opacity="0.8"/>
     </filter>
   </defs>
   
-  <!-- Fon (Rasmni shu yerda qo'shishingiz mumkin) -->
-  <rect width="500" height="500" fill="#0a1128" rx="10"/>
+  <!-- Orqa fon (ixtiyoriy, xohlasangiz o'chirib tashlashingiz mumkin) -->
+  <rect width="600" height="600" fill="#0a1128" rx="20"/>
 
-  <!-- Harflar guruhi. Ular bitta to'g'ri chiziq bo'ylab (pastdan yuqoriga) joylashgan -->
-  <g font-family="Arial, sans-serif" font-weight="900" font-size="55" fill="#ffffff" filter="url(#shadow)">
+  <!-- Harflar guruhi. Hammasi bitta chiziq bo'ylab joylashgan -->
+  <g font-family="Arial, sans-serif" font-weight="900" font-size="50" fill="#ffffff" filter="url(#shadow)">
     
-    <!-- T harfi -->
-    <text x="30" y="420" transform="rotate(-40, 30, 420)">T</text>
+    <!-- T -->
+    <text x="20" y="550" transform="rotate(-40, 20, 550)">T</text>
+    <!-- R -->
+    <text x="80" y="500" transform="rotate(-40, 80, 500)">R</text>
+    <!-- A -->
+    <text x="140" y="450" transform="rotate(-40, 140, 450)">A</text>
+    <!-- D -->
+    <text x="200" y="400" transform="rotate(-40, 200, 400)">D</text>
+    <!-- E -->
+    <text x="260" y="350" transform="rotate(-40, 260, 350)">E</text>
+    <!-- R -->
+    <text x="320" y="300" transform="rotate(-40, 320, 300)">R</text>
     
-    <!-- R harfi -->
-    <text x="100" y="360" transform="rotate(-40, 100, 360)">R</text>
+    <!-- Bo'sh joy (TIME so'zi boshlanishidan oldin) -->
     
-    <!-- A harfi -->
-    <text x="170" y="300" transform="rotate(-40, 170, 300)">A</text>
-    
-    <!-- D harfi -->
-    <text x="240" y="240" transform="rotate(-40, 240, 240)">D</text>
-    
-    <!-- E harfi -->
-    <text x="310" y="180" transform="rotate(-40, 310, 180)">E</text>
-    
-    <!-- R harfi (oxirgi) -->
-    <text x="380" y="120" transform="rotate(-40, 380, 120)">R</text>
+    <!-- T -->
+    <text x="390" y="240" transform="rotate(-40, 390, 240)">T</text>
+    <!-- I -->
+    <text x="430" y="205" transform="rotate(-40, 430, 205)">I</text>
+    <!-- M -->
+    <text x="480" y="160" transform="rotate(-40, 480, 160)">M</text>
+    <!-- E -->
+    <text x="550" y="100" transform="rotate(-40, 550, 100)">E</text>
     
   </g>
 </svg>
