@@ -33,48 +33,50 @@
       .glow-r2 { fill: #ffd700; filter: drop-shadow(0 0 8px #ffd700) drop-shadow(0 0 20px #ffd700); }
 
       /* =========================================
-         ANIMATSIYA VAQTLARI (Sekin va silliq)
+         ANIMATSIYA VAQTLARI
+         1. So'z miltillab chiqadi (neonFlicker)
+         2. Qo'shimcha qism yo'qoladi (hideWord)
+         3. Faqat bosh harf tepaga uchadi (flyUp)
          ========================================= */
+      
       /* 1. TIME */
-      #w-time { animation: neonFlicker 0.6s 0.2s forwards, hideWord 0.1s 1.8s forwards; }
-      #ime    { animation: hideWord 0.6s 1.2s forwards; }
-      #l-t    { animation: flyUpT 0.9s 1.9s forwards, pulse 2s 3.0s infinite alternate; }
+      #w-time { animation: neonFlicker 0.5s 0.2s forwards; }
+      #ime    { animation: hideWord 0.1s 1.0s forwards; }
+      #l-t    { animation: flyUpT 0.9s 1.2s forwards, pulse 2s 2.1s infinite alternate; }
 
       /* 2. RISK */
-      #w-risk { animation: neonFlicker 0.6s 2.7s forwards, hideWord 0.1s 4.3s forwards; }
-      #isk    { animation: hideWord 0.6s 3.7s forwards; }
-      #l-r    { animation: flyUpR 0.9s 4.4s forwards, pulse 2s 5.5s infinite alternate; }
+      #w-risk { animation: neonFlicker 0.5s 2.3s forwards; }
+      #isk    { animation: hideWord 0.1s 3.1s forwards; }
+      #l-r    { animation: flyUpR 0.9s 3.3s forwards, pulse 2s 4.2s infinite alternate; }
 
       /* 3. ANALYSIS */
-      #w-analysis { animation: neonFlicker 0.6s 5.2s forwards, hideWord 0.1s 6.8s forwards; }
-      #nalysis    { animation: hideWord 0.6s 6.2s forwards; }
-      #l-a        { animation: flyUpA 0.9s 6.9s forwards, pulse 2s 8.0s infinite alternate; }
+      #w-analysis { animation: neonFlicker 0.5s 4.4s forwards; }
+      #nalysis    { animation: hideWord 0.1s 5.2s forwards; }
+      #l-a        { animation: flyUpA 0.9s 5.4s forwards, pulse 2s 6.3s infinite alternate; }
 
       /* 4. DISCIPLINE */
-      #w-discipline { animation: neonFlicker 0.6s 7.7s forwards, hideWord 0.1s 9.3s forwards; }
-      #iscipline    { animation: hideWord 0.6s 8.7s forwards; }
-      #l-d          { animation: flyUpD 0.9s 9.4s forwards, pulse 2s 10.5s infinite alternate; }
+      #w-discipline { animation: neonFlicker 0.5s 6.5s forwards; }
+      #iscipline    { animation: hideWord 0.1s 7.3s forwards; }
+      #l-d          { animation: flyUpD 0.9s 7.5s forwards, pulse 2s 8.4s infinite alternate; }
 
       /* 5. EMOTION */
-      #w-emotion { animation: neonFlicker 0.6s 10.2s forwards, hideWord 0.1s 11.8s forwards; }
-      #motion    { animation: hideWord 0.6s 11.2s forwards; }
-      #l-e       { animation: flyUpE 0.9s 11.9s forwards, pulse 2s 13.0s infinite alternate; }
+      #w-emotion { animation: neonFlicker 0.5s 8.6s forwards; }
+      #motion    { animation: hideWord 0.1s 9.4s forwards; }
+      #l-e       { animation: flyUpE 0.9s 9.6s forwards, pulse 2s 10.5s infinite alternate; }
 
       /* 6. REWARD */
-      #w-reward { animation: neonFlicker 0.6s 12.7s forwards, hideWord 0.1s 14.3s forwards; }
-      #eward    { animation: hideWord 0.6s 13.7s forwards; }
-      #l-r2     { animation: flyUpR2 0.9s 14.4s forwards, pulse 2s 15.5s infinite alternate; }
+      #w-reward { animation: neonFlicker 0.5s 10.7s forwards; }
+      #eward    { animation: hideWord 0.1s 11.5s forwards; }
+      #l-r2     { animation: flyUpR2 0.9s 11.7s forwards, pulse 2s 12.6s infinite alternate; }
 
       /* =========================================
          KEYFRAMES
          ========================================= */
       @keyframes neonFlicker {
         0% { opacity: 0; }
-        10% { opacity: 0.8; }
-        20% { opacity: 0.2; }
-        30% { opacity: 1; }
-        50% { opacity: 0.5; }
-        60% { opacity: 1; }
+        20% { opacity: 0.5; }
+        40% { opacity: 1; }
+        60% { opacity: 0.7; }
         100% { opacity: 1; }
       }
 
@@ -89,8 +91,7 @@
       }
 
       /* =========================================
-         TENGLASHGAN TENG MASofadagi DIAGONAL HARAKATLAR
-         Boshlang'ich nuqta: x=400, y=1050
+         DIAGONAL HARAKATLAR (Teng masofada)
          ========================================= */
       
       /* T: x=100, y=1000 (-300, -50) */
@@ -140,7 +141,7 @@
   <!-- ORQA FON RASMI -->
   
 
-  <!-- ================= PASTKI SO'ZLAR ================= -->
+  <!-- ================= PASTKI SO'ZLAR (Asosiy bosh harflar shu yerda qoladi) ================= -->
   <g class="base-word">
     <text id="w-time" x="400" y="1050" class="glow-t">T<tspan id="ime">ime</tspan></text>
     <text id="w-risk" x="400" y="1050" class="glow-r">R<tspan id="isk">isk</tspan></text>
