@@ -1,8 +1,10 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1200" width="100%" height="100%">
   <defs>
     <style>
+      
+
       text {
-        font-family: 'Arial Black', 'Montserrat', sans-serif;
+        font-family: 'Montserrat', 'Arial Black', sans-serif;
         font-weight: 900;
         opacity: 0;
         animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
@@ -66,7 +68,6 @@
       /* =========================================
          KEYFRAMES
          ========================================= */
-      /* Neon yonish effekti (miltillash) */
       @keyframes neonFlicker {
         0% { opacity: 0; }
         10% { opacity: 0.8; }
@@ -82,66 +83,64 @@
         100% { opacity: 0; }
       }
 
-      /* Harflar uchib borgach, atrofi sekin-asta yonib turishi (pulse) */
       @keyframes pulse {
         0% { opacity: 1; filter: drop-shadow(0 0 8px currentColor) drop-shadow(0 0 15px currentColor); }
         100% { opacity: 0.7; filter: drop-shadow(0 0 15px currentColor) drop-shadow(0 0 35px currentColor); }
       }
 
       /* =========================================
-         DIAGONAL HARAKATLAR (Siz bergan X,Y asosida)
-         Barcha harflar x=400, y=1050 dan boshlanadi
+         TENGLASHGAN TENG MASofadagi DIAGONAL HARAKATLAR
+         Boshlang'ich nuqta: x=400, y=1050
          ========================================= */
       
-      /* T: (42 - 400 = -358), (986 - 1050 = -64) */
+      /* T: x=100, y=1000 (-300, -50) */
       @keyframes flyUpT {
         0% { opacity: 1; transform: translate(0, 0) scale(1); }
-        50% { opacity: 1; transform: translate(-179px, -32px) scale(1.2); } /* Uchish paytida biroz kattalashadi */
-        100% { opacity: 1; transform: translate(-358px, -64px) scale(1); }
+        50% { opacity: 1; transform: translate(-150px, -25px) scale(1.2); }
+        100% { opacity: 1; transform: translate(-300px, -50px) scale(1); }
       }
 
-      /* R: (150 - 400 = -250), (908 - 1050 = -142) */
+      /* R: x=220, y=880 (-180, -170) */
       @keyframes flyUpR {
         0% { opacity: 1; transform: translate(0, 0) scale(1); }
-        50% { opacity: 1; transform: translate(-125px, -71px) scale(1.2); }
-        100% { opacity: 1; transform: translate(-250px, -142px) scale(1); }
+        50% { opacity: 1; transform: translate(-90px, -85px) scale(1.2); }
+        100% { opacity: 1; transform: translate(-180px, -170px) scale(1); }
       }
 
-      /* A: (300 - 400 = -100), (797 - 1050 = -253) */
+      /* A: x=340, y=760 (-60, -290) */
       @keyframes flyUpA {
         0% { opacity: 1; transform: translate(0, 0) scale(1); }
-        50% { opacity: 1; transform: translate(-50px, -126px) scale(1.2); }
-        100% { opacity: 1; transform: translate(-100px, -253px) scale(1); }
+        50% { opacity: 1; transform: translate(-30px, -145px) scale(1.2); }
+        100% { opacity: 1; transform: translate(-60px, -290px) scale(1); }
       }
 
-      /* D: (430 - 400 = 30), (675 - 1050 = -375) */
+      /* D: x=460, y=640 (60, -410) */
       @keyframes flyUpD {
         0% { opacity: 1; transform: translate(0, 0) scale(1); }
-        50% { opacity: 1; transform: translate(15px, -187px) scale(1.2); }
-        100% { opacity: 1; transform: translate(30px, -375px) scale(1); }
+        50% { opacity: 1; transform: translate(30px, -205px) scale(1.2); }
+        100% { opacity: 1; transform: translate(60px, -410px) scale(1); }
       }
 
-      /* E: (568 - 400 = 168), (554 - 1050 = -496) */
+      /* E: x=580, y=520 (180, -530) */
       @keyframes flyUpE {
         0% { opacity: 1; transform: translate(0, 0) scale(1); }
-        50% { opacity: 1; transform: translate(84px, -248px) scale(1.2); }
-        100% { opacity: 1; transform: translate(168px, -496px) scale(1); }
+        50% { opacity: 1; transform: translate(90px, -265px) scale(1.2); }
+        100% { opacity: 1; transform: translate(180px, -530px) scale(1); }
       }
 
-      /* R2: (685 - 400 = 285), (461 - 1050 = -589) */
+      /* R2: x=700, y=400 (300, -650) */
       @keyframes flyUpR2 {
         0% { opacity: 1; transform: translate(0, 0) scale(1); }
-        50% { opacity: 1; transform: translate(142px, -294px) scale(1.2); }
-        100% { opacity: 1; transform: translate(285px, -589px) scale(1); }
+        50% { opacity: 1; transform: translate(150px, -325px) scale(1.2); }
+        100% { opacity: 1; transform: translate(300px, -650px) scale(1); }
       }
     </style>
   </defs>
 
   <!-- ORQA FON RASMI -->
-  <image href="trader.jpg" x="0" y="0" width="800" height="1200" preserveAspectRatio="xMidYMid slice" />
+  
 
-  <!-- ================= PASTKI SO'ZLAR (Ekran markazi, eng pastda) ================= -->
-  <!-- Barcha so'zlar mutlaqo bir xil font-size: 75px da -->
+  <!-- ================= PASTKI SO'ZLAR ================= -->
   <g class="base-word">
     <text id="w-time" x="400" y="1050" class="glow-t">T<tspan id="ime">ime</tspan></text>
     <text id="w-risk" x="400" y="1050" class="glow-r">R<tspan id="isk">isk</tspan></text>
@@ -152,13 +151,12 @@
   </g>
 
   <!-- ================= TEPAGA UCHUVCHI HARFLAR ================= -->
-  <!-- Barcha harflar bir xil font-size: 160px da -->
   <g class="top-letter">
-    <text id="l-t"  x="400" y="1050" class="glow-t">T</text>
-    <text id="l-r"  x="400" y="1050" class="glow-r">R</text>
-    <text id="l-a"  x="400" y="1050" class="glow-a">A</text>
-    <text id="l-d"  x="400" y="1050" class="glow-d">D</text>
-    <text id="l-e"  x="400" y="1050" class="glow-e">E</text>
+    <text id="l-t" x="400" y="1050" class="glow-t">T</text>
+    <text id="l-r" x="400" y="1050" class="glow-r">R</text>
+    <text id="l-a" x="400" y="1050" class="glow-a">A</text>
+    <text id="l-d" x="400" y="1050" class="glow-d">D</text>
+    <text id="l-e" x="400" y="1050" class="glow-e">E</text>
     <text id="l-r2" x="400" y="1050" class="glow-r2">R</text>
   </g>
 
