@@ -7,8 +7,9 @@
         font-family: 'Montserrat', 'Arial Black', sans-serif;
         font-weight: 900;
         text-anchor: middle;
-        font-size: 160px; /* Asosiy oxirgi o'lcham */
+        font-size: 75px;
         opacity: 0;
+        transform-origin: center;
         animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
       }
 
@@ -60,7 +61,7 @@
         100% { opacity: 1; }
       }
 
-      /* Qo'shimcha qism shunchaki ko'rinmaydi, lekin o'rnini saqlab turadi */
+      /* Qoldiq so'zni shunchaki shaffof qilish (koordinatalar sakramasligi uchun) */
       @keyframes hideSuffix {
         0%   { opacity: 1; }
         100% { opacity: 0; }
@@ -72,44 +73,44 @@
       }
 
       /* =========================================
-         O'ZGARMAS KOORDINATALAR VA SCALE ORQALI SILLIQ O'SISH
-         (75px dan 160px ga nisbat: 75/160 ≈ 0.4687)
+         HARFNING O'Z JOYIDAN TEPAGA KO'TARILISHI
+         (Transform orqali joyi siljimaydi, scale orqali kattalashadi)
          ========================================= */
 
-      /* T: (-300, -50) */
+      /* T */
       @keyframes flyUpT {
-        0%   { opacity: 1; transform: translate(0, 0) scale(0.4687); }
-        100% { opacity: 1; transform: translate(-300px, -50px) scale(1); }
+        0%   { opacity: 1; transform: translate(0, 0) scale(1); }
+        100% { opacity: 1; transform: translate(-300px, -50px) scale(2.133); }
       }
 
-      /* R: (-180, -170) */
+      /* R */
       @keyframes flyUpR {
-        0%   { opacity: 1; transform: translate(0, 0) scale(0.4687); }
-        100% { opacity: 1; transform: translate(-180px, -170px) scale(1); }
+        0%   { opacity: 1; transform: translate(0, 0) scale(1); }
+        100% { opacity: 1; transform: translate(-180px, -170px) scale(2.133); }
       }
 
-      /* A: (-60, -290) */
+      /* A */
       @keyframes flyUpA {
-        0%   { opacity: 1; transform: translate(0, 0) scale(0.4687); }
-        100% { opacity: 1; transform: translate(-60px, -290px) scale(1); }
+        0%   { opacity: 1; transform: translate(0, 0) scale(1); }
+        100% { opacity: 1; transform: translate(-60px, -290px) scale(2.133); }
       }
 
-      /* D: (60, -410) */
+      /* D */
       @keyframes flyUpD {
-        0%   { opacity: 1; transform: translate(0, 0) scale(0.4687); }
-        100% { opacity: 1; transform: translate(60px, -410px) scale(1); }
+        0%   { opacity: 1; transform: translate(0, 0) scale(1); }
+        100% { opacity: 1; transform: translate(60px, -410px) scale(2.133); }
       }
 
-      /* E: (180, -530) */
+      /* E */
       @keyframes flyUpE {
-        0%   { opacity: 1; transform: translate(0, 0) scale(0.4687); }
-        100% { opacity: 1; transform: translate(180px, -530px) scale(1); }
+        0%   { opacity: 1; transform: translate(0, 0) scale(1); }
+        100% { opacity: 1; transform: translate(180px, -530px) scale(2.133); }
       }
 
-      /* R2: (300, -650) */
+      /* R2 */
       @keyframes flyUpR2 {
-        0%   { opacity: 1; transform: translate(0, 0) scale(0.4687); }
-        100% { opacity: 1; transform: translate(300px, -650px) scale(1); }
+        0%   { opacity: 1; transform: translate(0, 0) scale(1); }
+        100% { opacity: 1; transform: translate(300px, -650px) scale(2.133); }
       }
     </style>
   </defs>
@@ -117,7 +118,7 @@
   <!-- ORQA FON RASMI -->
   
 
-  <!-- ASOSIY SO'ZLAR -->
+  <!-- ASOSIY SO'ZLAR VA UCHUVCHI HARFLAR -->
   <g>
     <text id="w-time" x="400" y="1050" class="glow-t">T<tspan id="ime">ime</tspan></text>
     <text id="w-risk" x="400" y="1050" class="glow-r">R<tspan id="isk">isk</tspan></text>
