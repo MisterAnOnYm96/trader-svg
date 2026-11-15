@@ -9,11 +9,13 @@
         animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
       }
 
+      /* Pastki qatordagi so'zlar uchun qat'iy o'lcham va markaz */
       .base-word {
         text-anchor: middle;
-        font-size: 70px;
+        font-size: 70px; 
       }
 
+      /* Tepaga uchuvchi harflar */
       .top-letter {
         text-anchor: middle;
         font-size: 150px; 
@@ -22,13 +24,8 @@
       /* =========================================
          1. TIME
          ========================================= */
-      /* So'z chiqadi (0.5s), 1.5s turadi, keyin o'chadi */
       #w-time { animation: showWord 0.5s 0.2s forwards, hideWord 0.1s 1.7s forwards; }
-      
-      /* ime harflari sekinroq (0.5s ichida) so'nadi. T esa qoladi */
       #ime    { animation: hideWord 0.5s 1.2s forwards; }
-      
-      /* T harfi ime o'chib bo'lgach (1.7s da) uchishni boshlaydi */
       #l-t    { animation: flyUpT 0.8s 1.7s forwards; }
 
       /* =========================================
@@ -113,7 +110,7 @@
   <!-- FON RASMI -->
   <image href="trader.jpg" x="0" y="0" width="800" height="1200" preserveAspectRatio="xMidYMid slice" />
 
-  <!-- ================= PASTKI SO'ZLAR ================= -->
+  <!-- ================= PASTKI SO'ZLAR (Barchasi alohida yozildi) ================= -->
   <g class="base-word">
     <text id="w-time" x="400" y="1100">T<tspan id="ime">ime</tspan></text>
     <text id="w-risk" x="400" y="1100">R<tspan id="isk">isk</tspan></text>
