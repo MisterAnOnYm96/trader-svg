@@ -4,69 +4,77 @@
       text {
         font-family: 'Arial Black', 'Montserrat', sans-serif;
         font-weight: 900;
-        fill: #ffffff;
         opacity: 0;
         animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
       }
 
-      /* Pastki qatordagi so'zlar uchun qat'iy o'lcham va markaz */
+      /* Barcha pastki so'zlar uchun bir xil o'lcham */
       .base-word {
         text-anchor: middle;
-        font-size: 70px; 
+        font-size: 75px;
       }
 
-      /* Tepaga uchuvchi harflar */
+      /* Tepaga uchuvchi harflar uchun bir xil o'lcham */
       .top-letter {
         text-anchor: middle;
-        font-size: 150px; 
+        font-size: 160px; 
       }
 
       /* =========================================
-         1. TIME
+         RANGLAR VA PORLASH (YONISH) EFFEKTLARI
          ========================================= */
-      #w-time { animation: showWord 0.5s 0.2s forwards, hideWord 0.1s 1.7s forwards; }
-      #ime    { animation: hideWord 0.5s 1.2s forwards; }
-      #l-t    { animation: flyUpT 0.8s 1.7s forwards; }
+      .glow-t  { fill: #00f3ff; filter: drop-shadow(0 0 8px #00f3ff) drop-shadow(0 0 20px #00f3ff); }
+      .glow-r  { fill: #ff007f; filter: drop-shadow(0 0 8px #ff007f) drop-shadow(0 0 20px #ff007f); }
+      .glow-a  { fill: #39ff14; filter: drop-shadow(0 0 8px #39ff14) drop-shadow(0 0 20px #39ff14); }
+      .glow-d  { fill: #ffaa00; filter: drop-shadow(0 0 8px #ffaa00) drop-shadow(0 0 20px #ffaa00); }
+      .glow-e  { fill: #b721ff; filter: drop-shadow(0 0 8px #b721ff) drop-shadow(0 0 20px #b721ff); }
+      .glow-r2 { fill: #ffd700; filter: drop-shadow(0 0 8px #ffd700) drop-shadow(0 0 20px #ffd700); }
 
       /* =========================================
-         2. RISK
+         ANIMATSIYA VAQTLARI (Sekin va silliq)
          ========================================= */
-      #w-risk { animation: showWord 0.5s 2.5s forwards, hideWord 0.1s 4.0s forwards; }
-      #isk    { animation: hideWord 0.5s 3.5s forwards; }
-      #l-r    { animation: flyUpR 0.8s 4.0s forwards; }
+      /* 1. TIME */
+      #w-time { animation: neonFlicker 0.6s 0.2s forwards, hideWord 0.1s 1.8s forwards; }
+      #ime    { animation: hideWord 0.6s 1.2s forwards; }
+      #l-t    { animation: flyUpT 0.9s 1.9s forwards, pulse 2s 3.0s infinite alternate; }
+
+      /* 2. RISK */
+      #w-risk { animation: neonFlicker 0.6s 2.7s forwards, hideWord 0.1s 4.3s forwards; }
+      #isk    { animation: hideWord 0.6s 3.7s forwards; }
+      #l-r    { animation: flyUpR 0.9s 4.4s forwards, pulse 2s 5.5s infinite alternate; }
+
+      /* 3. ANALYSIS */
+      #w-analysis { animation: neonFlicker 0.6s 5.2s forwards, hideWord 0.1s 6.8s forwards; }
+      #nalysis    { animation: hideWord 0.6s 6.2s forwards; }
+      #l-a        { animation: flyUpA 0.9s 6.9s forwards, pulse 2s 8.0s infinite alternate; }
+
+      /* 4. DISCIPLINE */
+      #w-discipline { animation: neonFlicker 0.6s 7.7s forwards, hideWord 0.1s 9.3s forwards; }
+      #iscipline    { animation: hideWord 0.6s 8.7s forwards; }
+      #l-d          { animation: flyUpD 0.9s 9.4s forwards, pulse 2s 10.5s infinite alternate; }
+
+      /* 5. EMOTION */
+      #w-emotion { animation: neonFlicker 0.6s 10.2s forwards, hideWord 0.1s 11.8s forwards; }
+      #motion    { animation: hideWord 0.6s 11.2s forwards; }
+      #l-e       { animation: flyUpE 0.9s 11.9s forwards, pulse 2s 13.0s infinite alternate; }
+
+      /* 6. REWARD */
+      #w-reward { animation: neonFlicker 0.6s 12.7s forwards, hideWord 0.1s 14.3s forwards; }
+      #eward    { animation: hideWord 0.6s 13.7s forwards; }
+      #l-r2     { animation: flyUpR2 0.9s 14.4s forwards, pulse 2s 15.5s infinite alternate; }
 
       /* =========================================
-         3. ANALYSIS
+         KEYFRAMES
          ========================================= */
-      #w-analysis { animation: showWord 0.5s 4.8s forwards, hideWord 0.1s 6.3s forwards; }
-      #nalysis    { animation: hideWord 0.5s 5.8s forwards; }
-      #l-a        { animation: flyUpA 0.8s 6.3s forwards; }
-
-      /* =========================================
-         4. DISCIPLINE
-         ========================================= */
-      #w-discipline { animation: showWord 0.5s 7.1s forwards, hideWord 0.1s 8.6s forwards; }
-      #iscipline    { animation: hideWord 0.5s 8.1s forwards; }
-      #l-d          { animation: flyUpD 0.8s 8.6s forwards; }
-
-      /* =========================================
-         5. EMOTION
-         ========================================= */
-      #w-emotion { animation: showWord 0.5s 9.4s forwards, hideWord 0.1s 10.9s forwards; }
-      #motion    { animation: hideWord 0.5s 10.4s forwards; }
-      #l-e       { animation: flyUpE 0.8s 10.9s forwards; }
-
-      /* =========================================
-         6. REWARD
-         ========================================= */
-      #w-reward { animation: showWord 0.5s 11.7s forwards, hideWord 0.1s 13.2s forwards; }
-      #eward    { animation: hideWord 0.5s 12.7s forwards; }
-      #l-r2     { animation: flyUpR2 0.8s 13.2s forwards; }
-
-      /* ===== UMUMIY ANIMATSIYALAR ===== */
-      @keyframes showWord {
-        0% { opacity: 0; transform: translateY(10px); }
-        100% { opacity: 1; transform: translateY(0); }
+      /* Neon yonish effekti (miltillash) */
+      @keyframes neonFlicker {
+        0% { opacity: 0; }
+        10% { opacity: 0.8; }
+        20% { opacity: 0.2; }
+        30% { opacity: 1; }
+        50% { opacity: 0.5; }
+        60% { opacity: 1; }
+        100% { opacity: 1; }
       }
 
       @keyframes hideWord {
@@ -74,60 +82,84 @@
         100% { opacity: 0; }
       }
 
-      /* ===== DIAGONAL HARAKATLAR ===== */
+      /* Harflar uchib borgach, atrofi sekin-asta yonib turishi (pulse) */
+      @keyframes pulse {
+        0% { opacity: 1; filter: drop-shadow(0 0 8px currentColor) drop-shadow(0 0 15px currentColor); }
+        100% { opacity: 0.7; filter: drop-shadow(0 0 15px currentColor) drop-shadow(0 0 35px currentColor); }
+      }
+
+      /* =========================================
+         DIAGONAL HARAKATLAR (Siz bergan X,Y asosida)
+         Barcha harflar x=400, y=1050 dan boshlanadi
+         ========================================= */
+      
+      /* T: (42 - 400 = -358), (986 - 1050 = -64) */
       @keyframes flyUpT {
-        0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(-358px, -114px); }
+        0% { opacity: 1; transform: translate(0, 0) scale(1); }
+        50% { opacity: 1; transform: translate(-179px, -32px) scale(1.2); } /* Uchish paytida biroz kattalashadi */
+        100% { opacity: 1; transform: translate(-358px, -64px) scale(1); }
       }
 
+      /* R: (150 - 400 = -250), (908 - 1050 = -142) */
       @keyframes flyUpR {
-        0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(-230px, -220px); }
+        0% { opacity: 1; transform: translate(0, 0) scale(1); }
+        50% { opacity: 1; transform: translate(-125px, -71px) scale(1.2); }
+        100% { opacity: 1; transform: translate(-250px, -142px) scale(1); }
       }
 
+      /* A: (300 - 400 = -100), (797 - 1050 = -253) */
       @keyframes flyUpA {
-        0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(-100px, -303px); }
+        0% { opacity: 1; transform: translate(0, 0) scale(1); }
+        50% { opacity: 1; transform: translate(-50px, -126px) scale(1.2); }
+        100% { opacity: 1; transform: translate(-100px, -253px) scale(1); }
       }
 
+      /* D: (430 - 400 = 30), (675 - 1050 = -375) */
       @keyframes flyUpD {
-        0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(30px, -425px); }
+        0% { opacity: 1; transform: translate(0, 0) scale(1); }
+        50% { opacity: 1; transform: translate(15px, -187px) scale(1.2); }
+        100% { opacity: 1; transform: translate(30px, -375px) scale(1); }
       }
 
+      /* E: (568 - 400 = 168), (554 - 1050 = -496) */
       @keyframes flyUpE {
-        0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(168px, -546px); }
+        0% { opacity: 1; transform: translate(0, 0) scale(1); }
+        50% { opacity: 1; transform: translate(84px, -248px) scale(1.2); }
+        100% { opacity: 1; transform: translate(168px, -496px) scale(1); }
       }
 
+      /* R2: (685 - 400 = 285), (461 - 1050 = -589) */
       @keyframes flyUpR2 {
-        0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(285px, -639px); }
+        0% { opacity: 1; transform: translate(0, 0) scale(1); }
+        50% { opacity: 1; transform: translate(142px, -294px) scale(1.2); }
+        100% { opacity: 1; transform: translate(285px, -589px) scale(1); }
       }
     </style>
   </defs>
 
-  <!-- FON RASMI -->
+  <!-- ORQA FON RASMI -->
   <image href="trader.jpg" x="0" y="0" width="800" height="1200" preserveAspectRatio="xMidYMid slice" />
 
-  <!-- ================= PASTKI SO'ZLAR (Barchasi alohida yozildi) ================= -->
+  <!-- ================= PASTKI SO'ZLAR (Ekran markazi, eng pastda) ================= -->
+  <!-- Barcha so'zlar mutlaqo bir xil font-size: 75px da -->
   <g class="base-word">
-    <text id="w-time" x="400" y="1100">T<tspan id="ime">ime</tspan></text>
-    <text id="w-risk" x="400" y="1100">R<tspan id="isk">isk</tspan></text>
-    <text id="w-analysis" x="400" y="1100">A<tspan id="nalysis">nalysis</tspan></text>
-    <text id="w-discipline" x="400" y="1100">D<tspan id="iscipline">iscipline</tspan></text>
-    <text id="w-emotion" x="400" y="1100">E<tspan id="motion">motion</tspan></text>
-    <text id="w-reward" x="400" y="1100">R<tspan id="eward">eward</tspan></text>
+    <text id="w-time" x="400" y="1050" class="glow-t">T<tspan id="ime">ime</tspan></text>
+    <text id="w-risk" x="400" y="1050" class="glow-r">R<tspan id="isk">isk</tspan></text>
+    <text id="w-analysis" x="400" y="1050" class="glow-a">A<tspan id="nalysis">nalysis</tspan></text>
+    <text id="w-discipline" x="400" y="1050" class="glow-d">D<tspan id="iscipline">iscipline</tspan></text>
+    <text id="w-emotion" x="400" y="1050" class="glow-e">E<tspan id="motion">motion</tspan></text>
+    <text id="w-reward" x="400" y="1050" class="glow-r2">R<tspan id="eward">eward</tspan></text>
   </g>
 
   <!-- ================= TEPAGA UCHUVCHI HARFLAR ================= -->
+  <!-- Barcha harflar bir xil font-size: 160px da -->
   <g class="top-letter">
-    <text id="l-t"  x="400" y="1100">T</text>
-    <text id="l-r"  x="400" y="1100">R</text>
-    <text id="l-a"  x="400" y="1100">A</text>
-    <text id="l-d"  x="400" y="1100">D</text>
-    <text id="l-e"  x="400" y="1100">E</text>
-    <text id="l-r2" x="400" y="1100">R</text>
+    <text id="l-t"  x="400" y="1050" class="glow-t">T</text>
+    <text id="l-r"  x="400" y="1050" class="glow-r">R</text>
+    <text id="l-a"  x="400" y="1050" class="glow-a">A</text>
+    <text id="l-d"  x="400" y="1050" class="glow-d">D</text>
+    <text id="l-e"  x="400" y="1050" class="glow-e">E</text>
+    <text id="l-r2" x="400" y="1050" class="glow-r2">R</text>
   </g>
 
 </svg>
