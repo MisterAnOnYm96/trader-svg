@@ -6,24 +6,18 @@
       text {
         font-family: 'Montserrat', 'Arial Black', sans-serif;
         font-weight: 900;
+        text-anchor: middle;
         opacity: 0;
         animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
       }
 
-      /* Barcha pastki so'zlar uchun bir xil o'lcham */
+      /* Barcha so'zlar uchun boshlang'ich o'lcham */
       .base-word {
-        text-anchor: middle;
         font-size: 75px;
       }
 
-      /* Tepaga uchuvchi harflar uchun bir xil o'lcham */
-      .top-letter {
-        text-anchor: middle;
-        font-size: 160px; 
-      }
-
       /* =========================================
-         RANGLAR VA PORLASH (YONISH) EFFEKTLARI
+         RANGLAR VA PORLASH EFFEKTLARI
          ========================================= */
       .glow-t  { fill: #00f3ff; filter: drop-shadow(0 0 8px #00f3ff) drop-shadow(0 0 20px #00f3ff); }
       .glow-r  { fill: #ff007f; filter: drop-shadow(0 0 8px #ff007f) drop-shadow(0 0 20px #ff007f); }
@@ -34,106 +28,93 @@
 
       /* =========================================
          ANIMATSIYA VAQTLARI
-         1. So'z miltillab chiqadi (neonFlicker)
-         2. Qo'shimcha qism yo'qoladi (hideWord)
-         3. Faqat bosh harf tepaga uchadi (flyUp)
          ========================================= */
-      
-      /* 1. TIME */
-      #w-time { animation: neonFlicker 0.5s 0.2s forwards; }
-      #ime    { animation: hideWord 0.1s 1.0s forwards; }
-      #l-t    { animation: flyUpT 0.9s 1.2s forwards, pulse 2s 2.1s infinite alternate; }
+      /* 1. TIME -> T */
+      #w-time { animation: neonFlicker 0.5s 0.2s forwards, flyUpT 0.9s 1.2s forwards, pulse 2s 2.1s infinite alternate; }
+      #ime    { animation: hideSuffix 0.2s 0.9s forwards; }
 
-      /* 2. RISK */
-      #w-risk { animation: neonFlicker 0.5s 2.3s forwards; }
-      #isk    { animation: hideWord 0.1s 3.1s forwards; }
-      #l-r    { animation: flyUpR 0.9s 3.3s forwards, pulse 2s 4.2s infinite alternate; }
+      /* 2. RISK -> R */
+      #w-risk { animation: neonFlicker 0.5s 2.3s forwards, flyUpR 0.9s 3.3s forwards, pulse 2s 4.2s infinite alternate; }
+      #isk    { animation: hideSuffix 0.2s 3.0s forwards; }
 
-      /* 3. ANALYSIS */
-      #w-analysis { animation: neonFlicker 0.5s 4.4s forwards; }
-      #nalysis    { animation: hideWord 0.1s 5.2s forwards; }
-      #l-a        { animation: flyUpA 0.9s 5.4s forwards, pulse 2s 6.3s infinite alternate; }
+      /* 3. ANALYSIS -> A */
+      #w-analysis { animation: neonFlicker 0.5s 4.4s forwards, flyUpA 0.9s 5.4s forwards, pulse 2s 6.3s infinite alternate; }
+      #nalysis    { animation: hideSuffix 0.2s 5.1s forwards; }
 
-      /* 4. DISCIPLINE */
-      #w-discipline { animation: neonFlicker 0.5s 6.5s forwards; }
-      #iscipline    { animation: hideWord 0.1s 7.3s forwards; }
-      #l-d          { animation: flyUpD 0.9s 7.5s forwards, pulse 2s 8.4s infinite alternate; }
+      /* 4. DISCIPLINE -> D */
+      #w-discipline { animation: neonFlicker 0.5s 6.5s forwards, flyUpD 0.9s 7.5s forwards, pulse 2s 8.4s infinite alternate; }
+      #iscipline    { animation: hideSuffix 0.2s 7.2s forwards; }
 
-      /* 5. EMOTION */
-      #w-emotion { animation: neonFlicker 0.5s 8.6s forwards; }
-      #motion    { animation: hideWord 0.1s 9.4s forwards; }
-      #l-e       { animation: flyUpE 0.9s 9.6s forwards, pulse 2s 10.5s infinite alternate; }
+      /* 5. EMOTION -> E */
+      #w-emotion { animation: neonFlicker 0.5s 8.6s forwards, flyUpE 0.9s 9.6s forwards, pulse 2s 10.5s infinite alternate; }
+      #motion    { animation: hideSuffix 0.2s 9.3s forwards; }
 
-      /* 6. REWARD */
-      #w-reward { animation: neonFlicker 0.5s 10.7s forwards; }
-      #eward    { animation: hideWord 0.1s 11.5s forwards; }
-      #l-r2     { animation: flyUpR2 0.9s 11.7s forwards, pulse 2s 12.6s infinite alternate; }
+      /* 6. REWARD -> R */
+      #w-reward { animation: neonFlicker 0.5s 10.7s forwards, flyUpR2 0.9s 11.7s forwards, pulse 2s 12.6s infinite alternate; }
+      #eward    { animation: hideSuffix 0.2s 11.4s forwards; }
 
       /* =========================================
          KEYFRAMES
          ========================================= */
       @keyframes neonFlicker {
-        0% { opacity: 0; }
-        20% { opacity: 0.5; }
-        40% { opacity: 1; }
-        60% { opacity: 0.7; }
+        0%   { opacity: 0; }
+        20%  { opacity: 0.4; }
+        40%  { opacity: 1; }
+        60%  { opacity: 0.6; }
         100% { opacity: 1; }
       }
 
-      @keyframes hideWord {
-        0% { opacity: 1; }
-        100% { opacity: 0; }
+      /* Qo'shimcha harflarni yo'qotish va o'rnini bo'shatish */
+      @keyframes hideSuffix {
+        0%   { opacity: 1; }
+        99%  { opacity: 0; }
+        100% { opacity: 0; display: none; }
       }
 
       @keyframes pulse {
-        0% { opacity: 1; filter: drop-shadow(0 0 8px currentColor) drop-shadow(0 0 15px currentColor); }
+        0%   { opacity: 1; filter: drop-shadow(0 0 8px currentColor) drop-shadow(0 0 15px currentColor); }
         100% { opacity: 0.7; filter: drop-shadow(0 0 15px currentColor) drop-shadow(0 0 35px currentColor); }
       }
 
       /* =========================================
-         DIAGONAL HARAKATLAR (Teng masofada)
+         AYNAN O'SHA HARFNING TEPAGA KO'TARILISHI
+         (75px dan 160px ga tenglashadi va teng masofada joylashadi)
          ========================================= */
-      
-      /* T: x=100, y=1000 (-300, -50) */
+
+      /* T: (-300, -50) */
       @keyframes flyUpT {
-        0% { opacity: 1; transform: translate(0, 0) scale(1); }
-        50% { opacity: 1; transform: translate(-150px, -25px) scale(1.2); }
-        100% { opacity: 1; transform: translate(-300px, -50px) scale(1); }
+        0%   { opacity: 1; font-size: 75px;  transform: translate(0, 0); }
+        100% { opacity: 1; font-size: 160px; transform: translate(-300px, -50px); }
       }
 
-      /* R: x=220, y=880 (-180, -170) */
+      /* R: (-180, -170) */
       @keyframes flyUpR {
-        0% { opacity: 1; transform: translate(0, 0) scale(1); }
-        50% { opacity: 1; transform: translate(-90px, -85px) scale(1.2); }
-        100% { opacity: 1; transform: translate(-180px, -170px) scale(1); }
+        0%   { opacity: 1; font-size: 75px;  transform: translate(0, 0); }
+        100% { opacity: 1; font-size: 160px; transform: translate(-180px, -170px); }
       }
 
-      /* A: x=340, y=760 (-60, -290) */
+      /* A: (-60, -290) */
       @keyframes flyUpA {
-        0% { opacity: 1; transform: translate(0, 0) scale(1); }
-        50% { opacity: 1; transform: translate(-30px, -145px) scale(1.2); }
-        100% { opacity: 1; transform: translate(-60px, -290px) scale(1); }
+        0%   { opacity: 1; font-size: 75px;  transform: translate(0, 0); }
+        100% { opacity: 1; font-size: 160px; transform: translate(-60px, -290px); }
       }
 
-      /* D: x=460, y=640 (60, -410) */
+      /* D: (60, -410) */
       @keyframes flyUpD {
-        0% { opacity: 1; transform: translate(0, 0) scale(1); }
-        50% { opacity: 1; transform: translate(30px, -205px) scale(1.2); }
-        100% { opacity: 1; transform: translate(60px, -410px) scale(1); }
+        0%   { opacity: 1; font-size: 75px;  transform: translate(0, 0); }
+        100% { opacity: 1; font-size: 160px; transform: translate(60px, -410px); }
       }
 
-      /* E: x=580, y=520 (180, -530) */
+      /* E: (180, -530) */
       @keyframes flyUpE {
-        0% { opacity: 1; transform: translate(0, 0) scale(1); }
-        50% { opacity: 1; transform: translate(90px, -265px) scale(1.2); }
-        100% { opacity: 1; transform: translate(180px, -530px) scale(1); }
+        0%   { opacity: 1; font-size: 75px;  transform: translate(0, 0); }
+        100% { opacity: 1; font-size: 160px; transform: translate(180px, -530px); }
       }
 
-      /* R2: x=700, y=400 (300, -650) */
+      /* R2: (300, -650) */
       @keyframes flyUpR2 {
-        0% { opacity: 1; transform: translate(0, 0) scale(1); }
-        50% { opacity: 1; transform: translate(150px, -325px) scale(1.2); }
-        100% { opacity: 1; transform: translate(300px, -650px) scale(1); }
+        0%   { opacity: 1; font-size: 75px;  transform: translate(0, 0); }
+        100% { opacity: 1; font-size: 160px; transform: translate(300px, -650px); }
       }
     </style>
   </defs>
@@ -141,7 +122,7 @@
   <!-- ORQA FON RASMI -->
   
 
-  <!-- ================= PASTKI SO'ZLAR (Asosiy bosh harflar shu yerda qoladi) ================= -->
+  <!-- YAGONA ELEMENTLAR: So'z chiqadi -> davomi o'chadi -> bosh harfning o'zi tepaga uchadi -->
   <g class="base-word">
     <text id="w-time" x="400" y="1050" class="glow-t">T<tspan id="ime">ime</tspan></text>
     <text id="w-risk" x="400" y="1050" class="glow-r">R<tspan id="isk">isk</tspan></text>
@@ -150,15 +131,4 @@
     <text id="w-emotion" x="400" y="1050" class="glow-e">E<tspan id="motion">motion</tspan></text>
     <text id="w-reward" x="400" y="1050" class="glow-r2">R<tspan id="eward">eward</tspan></text>
   </g>
-
-  <!-- ================= TEPAGA UCHUVCHI HARFLAR ================= -->
-  <g class="top-letter">
-    <text id="l-t" x="400" y="1050" class="glow-t">T</text>
-    <text id="l-r" x="400" y="1050" class="glow-r">R</text>
-    <text id="l-a" x="400" y="1050" class="glow-a">A</text>
-    <text id="l-d" x="400" y="1050" class="glow-d">D</text>
-    <text id="l-e" x="400" y="1050" class="glow-e">E</text>
-    <text id="l-r2" x="400" y="1050" class="glow-r2">R</text>
-  </g>
-
 </svg>
