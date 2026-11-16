@@ -4,9 +4,9 @@
       text {
         font-family: 'Arial Black', 'Montserrat', sans-serif;
         font-weight: 900;
-        fill: #ffffff; /* Barcha harflar va so'zlar oq rangda */
+        fill: #ffffff; /* Faqat oq rang */
         opacity: 0;
-        animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+        animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* Silliq harakat uchun */
       }
 
       /* Barcha so'zlar va harflar uchun 120px o'lcham */
@@ -17,100 +17,96 @@
 
       /* Yonish (Glow) effekti - faqat oq rangda */
       .glow {
-        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 25px rgba(255, 255, 255, 0.6));
+        filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
       }
 
       /* =========================================
          ANIMATSIYA VAQTLARI
          ========================================= */
       /* 1. TIME */
-      #w-time { animation: neonFlicker 0.5s 0.2s forwards, hideWord 0.1s 1.5s forwards; }
-      #ime    { animation: hideWord 0.5s 1.0s forwards; }
-      #l-t    { animation: flyUpT 0.8s 1.6s forwards, pulse 2s 2.4s infinite alternate; }
+      #w-time { animation: flickerIn 0.4s 0.2s forwards, fadeOutWord 0.1s 1.2s forwards; }
+      #ime    { animation: fadeOutWord 0.3s 0.8s forwards; }
+      #l-t    { animation: flyStraightT 0.8s 1.2s forwards; }
 
       /* 2. RISK */
-      #w-risk { animation: neonFlicker 0.5s 2.2s forwards, hideWord 0.1s 3.5s forwards; }
-      #isk    { animation: hideWord 0.5s 3.0s forwards; }
-      #l-r    { animation: flyUpR 0.8s 3.6s forwards, pulse 2s 4.4s infinite alternate; }
+      #w-risk { animation: flickerIn 0.4s 2.0s forwards, fadeOutWord 0.1s 3.0s forwards; }
+      #isk    { animation: fadeOutWord 0.3s 2.6s forwards; }
+      #l-r    { animation: flyStraightR 0.8s 3.0s forwards; }
 
       /* 3. ANALYSIS */
-      #w-analysis { animation: neonFlicker 0.5s 4.2s forwards, hideWord 0.1s 5.5s forwards; }
-      #nalysis    { animation: hideWord 0.5s 5.0s forwards; }
-      #l-a        { animation: flyUpA 0.8s 5.6s forwards, pulse 2s 6.4s infinite alternate; }
+      #w-analysis { animation: flickerIn 0.4s 3.8s forwards, fadeOutWord 0.1s 4.8s forwards; }
+      #nalysis    { animation: fadeOutWord 0.3s 4.4s forwards; }
+      #l-a        { animation: flyStraightA 0.8s 4.8s forwards; }
 
       /* 4. DISCIPLINE */
-      #w-discipline { animation: neonFlicker 0.5s 6.2s forwards, hideWord 0.1s 7.5s forwards; }
-      #iscipline    { animation: hideWord 0.5s 7.0s forwards; }
-      #l-d          { animation: flyUpD 0.8s 7.6s forwards, pulse 2s 8.4s infinite alternate; }
+      #w-discipline { animation: flickerIn 0.4s 5.6s forwards, fadeOutWord 0.1s 6.6s forwards; }
+      #iscipline    { animation: fadeOutWord 0.3s 6.2s forwards; }
+      #l-d          { animation: flyStraightD 0.8s 6.6s forwards; }
 
       /* 5. EMOTION */
-      #w-emotion { animation: neonFlicker 0.5s 8.2s forwards, hideWord 0.1s 9.5s forwards; }
-      #motion    { animation: hideWord 0.5s 9.0s forwards; }
-      #l-e       { animation: flyUpE 0.8s 9.6s forwards, pulse 2s 10.4s infinite alternate; }
+      #w-emotion { animation: flickerIn 0.4s 7.4s forwards, fadeOutWord 0.1s 8.4s forwards; }
+      #motion    { animation: fadeOutWord 0.3s 8.0s forwards; }
+      #l-e       { animation: flyStraightE 0.8s 8.4s forwards; }
 
       /* 6. REWARD */
-      #w-reward { animation: neonFlicker 0.5s 10.2s forwards, hideWord 0.1s 11.5s forwards; }
-      #eward    { animation: hideWord 0.5s 11.0s forwards; }
-      #l-r2     { animation: flyUpR2 0.8s 11.6s forwards, pulse 2s 12.4s infinite alternate; }
+      #w-reward { animation: flickerIn 0.4s 9.2s forwards, fadeOutWord 0.1s 10.2s forwards; }
+      #eward    { animation: fadeOutWord 0.3s 9.8s forwards; }
+      #l-r2     { animation: flyStraightR2 0.8s 10.2s forwards; }
 
       /* =========================================
          KEYFRAMES
          ========================================= */
-      @keyframes neonFlicker {
+      /* Yonib paydo bo'lish effekti */
+      @keyframes flickerIn {
         0% { opacity: 0; }
-        20% { opacity: 1; }
-        40% { opacity: 0.2; }
-        60% { opacity: 1; }
-        80% { opacity: 0.5; }
+        30% { opacity: 1; }
+        50% { opacity: 0.3; }
+        70% { opacity: 1; }
         100% { opacity: 1; }
       }
 
-      @keyframes hideWord {
+      /* Yonib o'chish (so'nish) */
+      @keyframes fadeOutWord {
         0% { opacity: 1; }
         100% { opacity: 0; }
       }
 
-      @keyframes pulse {
-        0% { opacity: 1; }
-        100% { opacity: 0.6; }
-      }
-
       /* =========================================
-         DIAGONAL HARAKATLAR (Teng oraliqli yangi X koordinatalar)
+         TO'G'RI CHIZIQ BO'YLAB HARAKAT (Teng oraliqli X koordinatalar)
          ========================================= */
       
       /* T: X=42 (42 - 400 = -358) */
-      @keyframes flyUpT {
+      @keyframes flyStraightT {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(-358px, -64px); }
       }
 
       /* R: X=171 (171 - 400 = -229) */
-      @keyframes flyUpR {
+      @keyframes flyStraightR {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(-229px, -142px); }
       }
 
       /* A: X=299 (299 - 400 = -101) */
-      @keyframes flyUpA {
+      @keyframes flyStraightA {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(-101px, -253px); }
       }
 
       /* D: X=428 (428 - 400 = 28) */
-      @keyframes flyUpD {
+      @keyframes flyStraightD {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(28px, -375px); }
       }
 
       /* E: X=556 (556 - 400 = 156) */
-      @keyframes flyUpE {
+      @keyframes flyStraightE {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(156px, -496px); }
       }
 
       /* R2: X=685 (685 - 400 = 285) */
-      @keyframes flyUpR2 {
+      @keyframes flyStraightR2 {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(285px, -589px); }
       }
