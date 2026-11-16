@@ -23,8 +23,8 @@
       /* =========================================
          ANIMATSIYA VAQTLARI
          ========================================= */
-      /* 1. TIME */
-      #w-time { animation: flickerIn 0.4s 0.2s forwards, fadeOutWord 0.1s 1.2s forwards; }
+      /* 1. TIME (Endi alohida harflar) */
+      #w-time { animation: flickerIn 0.4s 0.2s forwards; }
       #ime    { animation: fadeOutWord 0.3s 0.8s forwards; }
       #l-t    { animation: flyStraightT 0.8s 1.2s forwards; }
 
@@ -56,7 +56,6 @@
       /* =========================================
          KEYFRAMES
          ========================================= */
-      /* Yonib paydo bo'lish effekti */
       @keyframes flickerIn {
         0% { opacity: 0; }
         30% { opacity: 1; }
@@ -65,47 +64,42 @@
         100% { opacity: 1; }
       }
 
-      /* Yonib o'chish (so'nish) */
       @keyframes fadeOutWord {
         0% { opacity: 1; }
         100% { opacity: 0; }
       }
 
       /* =========================================
-         TO'G'RI CHIZIQ BO'YLAB HARAKAT (Teng oraliqli X koordinatalar)
+         TO'G'RI CHIZIQ BO'YLAB HARAKAT
          ========================================= */
       
-      /* T: X=42 (42 - 400 = -358) */
+      /* T harfi x=250 dan boshlanadi (42 - 250 = -208) */
       @keyframes flyStraightT {
         0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(-358px, -64px); }
+        100% { opacity: 1; transform: translate(-208px, -64px); }
       }
 
-      /* R: X=171 (171 - 400 = -229) */
+      /* Qolgan harflar x=400 dan boshlanadi (o'zgarmagan) */
       @keyframes flyStraightR {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(-229px, -142px); }
       }
 
-      /* A: X=299 (299 - 400 = -101) */
       @keyframes flyStraightA {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(-101px, -253px); }
       }
 
-      /* D: X=428 (428 - 400 = 28) */
       @keyframes flyStraightD {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(28px, -375px); }
       }
 
-      /* E: X=556 (556 - 400 = 156) */
       @keyframes flyStraightE {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(156px, -496px); }
       }
 
-      /* R2: X=685 (685 - 400 = 285) */
       @keyframes flyStraightR2 {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(285px, -589px); }
@@ -118,7 +112,13 @@
 
   <!-- ================= PASTKI SO'ZLAR ================= -->
   <g class="base-word">
-    <text id="w-time" x="400" y="1050" class="glow">T<tspan id="ime">ime</tspan></text>
+    <!-- TIME so'zi (Alohida harflarga bo'lingan) -->
+    <text id="w-time" x="250" y="1050" class="glow">T</text>
+    <text id="ime"    x="330" y="1050" class="glow">i</text>
+    <text id="ime"    x="400" y="1050" class="glow">m</text>
+    <text id="ime"    x="490" y="1050" class="glow">e</text>
+
+    <!-- Qolgan so'zlar (Markazda) -->
     <text id="w-risk" x="400" y="1050" class="glow">R<tspan id="isk">isk</tspan></text>
     <text id="w-analysis" x="400" y="1050" class="glow">A<tspan id="nalysis">nalysis</tspan></text>
     <text id="w-discipline" x="400" y="1050" class="glow">D<tspan id="iscipline">iscipline</tspan></text>
@@ -128,7 +128,10 @@
 
   <!-- ================= TEPAGA UCHUVCHI HARFLAR ================= -->
   <g class="top-letter">
-    <text id="l-t"  x="400" y="1050" class="glow">T</text>
+    <!-- T harfi ham x=250 dan boshlanadi -->
+    <text id="l-t"  x="250" y="1050" class="glow">T</text>
+    
+    <!-- Qolgan harflar x=400 dan boshlanadi -->
     <text id="l-r"  x="400" y="1050" class="glow">R</text>
     <text id="l-a"  x="400" y="1050" class="glow">A</text>
     <text id="l-d"  x="400" y="1050" class="glow">D</text>
