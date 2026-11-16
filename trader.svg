@@ -8,16 +8,10 @@
         animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
       }
 
-      /* Barcha pastki so'zlar uchun qat'iy 70px o'lcham */
-      .base-word {
+      /* Barcha pastki so'zlar va tepaga uchuvchi harflar uchun qat'iy 120px o'lcham */
+      .base-word, .top-letter {
         text-anchor: middle;
-        font-size: 70px;
-      }
-
-      /* Barcha tepaga uchuvchi harflar uchun qat'iy 150px o'lcham */
-      .top-letter {
-        text-anchor: middle;
-        font-size: 150px; 
+        font-size: 120px; 
       }
 
       /* =========================================
@@ -123,7 +117,7 @@
   <!-- ORQA FON RASMI -->
   <image href="trader.jpg" x="0" y="0" width="800" height="1200" preserveAspectRatio="xMidYMid slice" />
 
-  <!-- ================= PASTKI SO'ZLAR ================= -->
+  <!-- ================= PASTKI SO'ZLAR (120px) ================= -->
   <g class="base-word">
     <text id="w-time" x="400" y="1050" class="glow-t">T<tspan id="ime">ime</tspan></text>
     <text id="w-risk" x="400" y="1050" class="glow-r">R<tspan id="isk">isk</tspan></text>
@@ -133,7 +127,7 @@
     <text id="w-reward" x="400" y="1050" class="glow-r2">R<tspan id="eward">eward</tspan></text>
   </g>
 
-  <!-- ================= TEPAGA UCHUVCHI HARFLAR ================= -->
+  <!-- ================= TEPAGA UCHUVCHI HARFLAR (120px) ================= -->
   <g class="top-letter">
     <text id="l-t"  x="400" y="1050" class="glow-t">T</text>
     <text id="l-r"  x="400" y="1050" class="glow-r">R</text>
