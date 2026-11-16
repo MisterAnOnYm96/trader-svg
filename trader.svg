@@ -4,25 +4,21 @@
       text {
         font-family: 'Arial Black', 'Montserrat', sans-serif;
         font-weight: 900;
+        fill: #ffffff; /* Barcha harflar va so'zlar oq rangda */
         opacity: 0;
         animation-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
       }
 
-      /* Barcha pastki so'zlar va tepaga uchuvchi harflar uchun qat'iy 120px o'lcham */
+      /* Barcha so'zlar va harflar uchun 120px o'lcham */
       .base-word, .top-letter {
         text-anchor: middle;
         font-size: 120px; 
       }
 
-      /* =========================================
-         RANGLAR VA PORLASH (YONISH) EFFEKTLARI
-         ========================================= */
-      .glow-t  { fill: #00f3ff; filter: drop-shadow(0 0 10px #00f3ff) drop-shadow(0 0 25px #00f3ff); }
-      .glow-r  { fill: #ff007f; filter: drop-shadow(0 0 10px #ff007f) drop-shadow(0 0 25px #ff007f); }
-      .glow-a  { fill: #39ff14; filter: drop-shadow(0 0 10px #39ff14) drop-shadow(0 0 25px #39ff14); }
-      .glow-d  { fill: #ffaa00; filter: drop-shadow(0 0 10px #ffaa00) drop-shadow(0 0 25px #ffaa00); }
-      .glow-e  { fill: #b721ff; filter: drop-shadow(0 0 10px #b721ff) drop-shadow(0 0 25px #b721ff); }
-      .glow-r2 { fill: #ffd700; filter: drop-shadow(0 0 10px #ffd700) drop-shadow(0 0 25px #ffd700); }
+      /* Yonish (Glow) effekti - faqat oq rangda */
+      .glow {
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.9)) drop-shadow(0 0 25px rgba(255, 255, 255, 0.6));
+      }
 
       /* =========================================
          ANIMATSIYA VAQTLARI
@@ -80,33 +76,40 @@
       }
 
       /* =========================================
-         DIAGONAL HARAKATLAR (Siz bergan X,Y asosida)
+         DIAGONAL HARAKATLAR (Teng oraliqli yangi X koordinatalar)
          ========================================= */
+      
+      /* T: X=42 (42 - 400 = -358) */
       @keyframes flyUpT {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(-358px, -64px); }
       }
 
+      /* R: X=171 (171 - 400 = -229) */
       @keyframes flyUpR {
         0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(-250px, -142px); }
+        100% { opacity: 1; transform: translate(-229px, -142px); }
       }
 
+      /* A: X=299 (299 - 400 = -101) */
       @keyframes flyUpA {
         0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(-100px, -253px); }
+        100% { opacity: 1; transform: translate(-101px, -253px); }
       }
 
+      /* D: X=428 (428 - 400 = 28) */
       @keyframes flyUpD {
         0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(30px, -375px); }
+        100% { opacity: 1; transform: translate(28px, -375px); }
       }
 
+      /* E: X=556 (556 - 400 = 156) */
       @keyframes flyUpE {
         0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(168px, -496px); }
+        100% { opacity: 1; transform: translate(156px, -496px); }
       }
 
+      /* R2: X=685 (685 - 400 = 285) */
       @keyframes flyUpR2 {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(285px, -589px); }
@@ -117,24 +120,24 @@
   <!-- ORQA FON RASMI -->
   <image href="trader.jpg" x="0" y="0" width="800" height="1200" preserveAspectRatio="xMidYMid slice" />
 
-  <!-- ================= PASTKI SO'ZLAR (120px) ================= -->
+  <!-- ================= PASTKI SO'ZLAR ================= -->
   <g class="base-word">
-    <text id="w-time" x="400" y="1050" class="glow-t">T<tspan id="ime">ime</tspan></text>
-    <text id="w-risk" x="400" y="1050" class="glow-r">R<tspan id="isk">isk</tspan></text>
-    <text id="w-analysis" x="400" y="1050" class="glow-a">A<tspan id="nalysis">nalysis</tspan></text>
-    <text id="w-discipline" x="400" y="1050" class="glow-d">D<tspan id="iscipline">iscipline</tspan></text>
-    <text id="w-emotion" x="400" y="1050" class="glow-e">E<tspan id="motion">motion</tspan></text>
-    <text id="w-reward" x="400" y="1050" class="glow-r2">R<tspan id="eward">eward</tspan></text>
+    <text id="w-time" x="400" y="1050" class="glow">T<tspan id="ime">ime</tspan></text>
+    <text id="w-risk" x="400" y="1050" class="glow">R<tspan id="isk">isk</tspan></text>
+    <text id="w-analysis" x="400" y="1050" class="glow">A<tspan id="nalysis">nalysis</tspan></text>
+    <text id="w-discipline" x="400" y="1050" class="glow">D<tspan id="iscipline">iscipline</tspan></text>
+    <text id="w-emotion" x="400" y="1050" class="glow">E<tspan id="motion">motion</tspan></text>
+    <text id="w-reward" x="400" y="1050" class="glow">R<tspan id="eward">eward</tspan></text>
   </g>
 
-  <!-- ================= TEPAGA UCHUVCHI HARFLAR (120px) ================= -->
+  <!-- ================= TEPAGA UCHUVCHI HARFLAR ================= -->
   <g class="top-letter">
-    <text id="l-t"  x="400" y="1050" class="glow-t">T</text>
-    <text id="l-r"  x="400" y="1050" class="glow-r">R</text>
-    <text id="l-a"  x="400" y="1050" class="glow-a">A</text>
-    <text id="l-d"  x="400" y="1050" class="glow-d">D</text>
-    <text id="l-e"  x="400" y="1050" class="glow-e">E</text>
-    <text id="l-r2" x="400" y="1050" class="glow-r2">R</text>
+    <text id="l-t"  x="400" y="1050" class="glow">T</text>
+    <text id="l-r"  x="400" y="1050" class="glow">R</text>
+    <text id="l-a"  x="400" y="1050" class="glow">A</text>
+    <text id="l-d"  x="400" y="1050" class="glow">D</text>
+    <text id="l-e"  x="400" y="1050" class="glow">E</text>
+    <text id="l-r2" x="400" y="1050" class="glow">R</text>
   </g>
 
 </svg>
