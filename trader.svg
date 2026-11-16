@@ -4,18 +4,17 @@
       text {
         font-family: 'Arial Black', 'Montserrat', sans-serif;
         font-weight: 900;
-        fill: #ffffff; /* Faqat oq rang */
+        fill: #ffffff;
         opacity: 0;
-        animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1); /* Silliq harakat uchun */
+        animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
       }
 
-      /* Barcha so'zlar va harflar uchun 120px o'lcham */
+      /* Matnlar markazdan emas, aynan x=400 nuqtasidan boshlanadi */
       .base-word, .top-letter {
-        text-anchor: middle;
+        text-anchor: start; /* Bu qism o'zgardi */
         font-size: 120px; 
       }
 
-      /* Yonish (Glow) effekti - faqat oq rangda */
       .glow {
         filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
       }
@@ -23,8 +22,8 @@
       /* =========================================
          ANIMATSIYA VAQTLARI
          ========================================= */
-      /* 1. TIME (Endi alohida harflar) */
-      #w-time { animation: flickerIn 0.4s 0.2s forwards; }
+      /* 1. TIME */
+      #w-time { animation: flickerIn 0.4s 0.2s forwards, fadeOutWord 0.1s 1.2s forwards; }
       #ime    { animation: fadeOutWord 0.3s 0.8s forwards; }
       #l-t    { animation: flyStraightT 0.8s 1.2s forwards; }
 
@@ -70,36 +69,40 @@
       }
 
       /* =========================================
-         TO'G'RI CHIZIQ BO'YLAB HARAKAT
+         TO'G'RI CHIZIQ BO'YLAB HARAKAT (Harflar x=400 dan uchadi)
          ========================================= */
       
-      /* T harfi x=250 dan boshlanadi (42 - 250 = -208) */
+      /* T: 42 - 400 = -358 */
       @keyframes flyStraightT {
         0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(-208px, -64px); }
+        100% { opacity: 1; transform: translate(-358px, -64px); }
       }
 
-      /* Qolgan harflar x=400 dan boshlanadi (o'zgarmagan) */
+      /* R: 171 - 400 = -229 */
       @keyframes flyStraightR {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(-229px, -142px); }
       }
 
+      /* A: 299 - 400 = -101 */
       @keyframes flyStraightA {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(-101px, -253px); }
       }
 
+      /* D: 428 - 400 = 28 */
       @keyframes flyStraightD {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(28px, -375px); }
       }
 
+      /* E: 556 - 400 = 156 */
       @keyframes flyStraightE {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(156px, -496px); }
       }
 
+      /* R2: 685 - 400 = 285 */
       @keyframes flyStraightR2 {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(285px, -589px); }
@@ -110,15 +113,11 @@
   <!-- ORQA FON RASMI -->
   <image href="trader.jpg" x="0" y="0" width="800" height="1200" preserveAspectRatio="xMidYMid slice" />
 
-  <!-- ================= PASTKI SO'ZLAR ================= -->
+  <!-- ================= PASTKI SO'ZLAR (Barchasi x=400 dan boshlanadi) ================= -->
   <g class="base-word">
-    <!-- TIME so'zi (Alohida harflarga bo'lingan) -->
-    <text id="w-time" x="250" y="1050" class="glow">T</text>
-    <text id="ime"    x="330" y="1050" class="glow">i</text>
-    <text id="ime"    x="400" y="1050" class="glow">m</text>
-    <text id="ime"    x="490" y="1050" class="glow">e</text>
-
-    <!-- Qolgan so'zlar (Markazda) -->
+    <!-- Time so'zi endi alohida harflarga bo'linishi shart emas, chunki u o'zi x=400 dan boshlanadi -->
+    <text id="w-time" x="400" y="1050" class="glow">T<tspan id="ime">ime</tspan></text>
+    
     <text id="w-risk" x="400" y="1050" class="glow">R<tspan id="isk">isk</tspan></text>
     <text id="w-analysis" x="400" y="1050" class="glow">A<tspan id="nalysis">nalysis</tspan></text>
     <text id="w-discipline" x="400" y="1050" class="glow">D<tspan id="iscipline">iscipline</tspan></text>
@@ -126,12 +125,9 @@
     <text id="w-reward" x="400" y="1050" class="glow">R<tspan id="eward">eward</tspan></text>
   </g>
 
-  <!-- ================= TEPAGA UCHUVCHI HARFLAR ================= -->
+  <!-- ================= TEPAGA UCHUVCHI HARFLAR (x=400 dan boshlanadi) ================= -->
   <g class="top-letter">
-    <!-- T harfi ham x=250 dan boshlanadi -->
-    <text id="l-t"  x="250" y="1050" class="glow">T</text>
-    
-    <!-- Qolgan harflar x=400 dan boshlanadi -->
+    <text id="l-t"  x="400" y="1050" class="glow">T</text>
     <text id="l-r"  x="400" y="1050" class="glow">R</text>
     <text id="l-a"  x="400" y="1050" class="glow">A</text>
     <text id="l-d"  x="400" y="1050" class="glow">D</text>
