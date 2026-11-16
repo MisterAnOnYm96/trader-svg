@@ -9,12 +9,24 @@
         animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
       }
 
-      /* Matnlar markazdan emas, aynan x=400 nuqtasidan boshlanadi */
-      .base-word, .top-letter {
-        text-anchor: start; /* Bu qism o'zgardi */
-        font-size: 120px; 
+      /* So'zlar x=400 dan boshlanadi. Bosh harf 100px */
+      .base-word {
+        text-anchor: start;
+        font-size: 100px; 
       }
 
+      /* Kichik harflar (ime, isk va h.k.) 70px */
+      .base-word tspan {
+        font-size: 70px;
+      }
+
+      /* Tepaga uchuvchi bosh harflar 100px */
+      .top-letter {
+        text-anchor: start;
+        font-size: 100px; 
+      }
+
+      /* Yonish (Glow) effekti */
       .glow {
         filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.8)) drop-shadow(0 0 20px rgba(255, 255, 255, 0.5));
       }
@@ -69,40 +81,34 @@
       }
 
       /* =========================================
-         TO'G'RI CHIZIQ BO'YLAB HARAKAT (Harflar x=400 dan uchadi)
+         TO'G'RI CHIZIQ BO'YLAB HARAKAT
          ========================================= */
       
-      /* T: 42 - 400 = -358 */
       @keyframes flyStraightT {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(-358px, -64px); }
       }
 
-      /* R: 171 - 400 = -229 */
       @keyframes flyStraightR {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(-229px, -142px); }
       }
 
-      /* A: 299 - 400 = -101 */
       @keyframes flyStraightA {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(-101px, -253px); }
       }
 
-      /* D: 428 - 400 = 28 */
       @keyframes flyStraightD {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(28px, -375px); }
       }
 
-      /* E: 556 - 400 = 156 */
       @keyframes flyStraightE {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(156px, -496px); }
       }
 
-      /* R2: 685 - 400 = 285 */
       @keyframes flyStraightR2 {
         0% { opacity: 1; transform: translate(0, 0); }
         100% { opacity: 1; transform: translate(285px, -589px); }
@@ -113,11 +119,9 @@
   <!-- ORQA FON RASMI -->
   <image href="trader.jpg" x="0" y="0" width="800" height="1200" preserveAspectRatio="xMidYMid slice" />
 
-  <!-- ================= PASTKI SO'ZLAR (Barchasi x=400 dan boshlanadi) ================= -->
+  <!-- ================= PASTKI SO'ZLAR ================= -->
   <g class="base-word">
-    <!-- Time so'zi endi alohida harflarga bo'linishi shart emas, chunki u o'zi x=400 dan boshlanadi -->
     <text id="w-time" x="400" y="1050" class="glow">T<tspan id="ime">ime</tspan></text>
-    
     <text id="w-risk" x="400" y="1050" class="glow">R<tspan id="isk">isk</tspan></text>
     <text id="w-analysis" x="400" y="1050" class="glow">A<tspan id="nalysis">nalysis</tspan></text>
     <text id="w-discipline" x="400" y="1050" class="glow">D<tspan id="iscipline">iscipline</tspan></text>
@@ -125,7 +129,7 @@
     <text id="w-reward" x="400" y="1050" class="glow">R<tspan id="eward">eward</tspan></text>
   </g>
 
-  <!-- ================= TEPAGA UCHUVCHI HARFLAR (x=400 dan boshlanadi) ================= -->
+  <!-- ================= TEPAGA UCHUVCHI HARFLAR ================= -->
   <g class="top-letter">
     <text id="l-t"  x="400" y="1050" class="glow">T</text>
     <text id="l-r"  x="400" y="1050" class="glow">R</text>
