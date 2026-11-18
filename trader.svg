@@ -9,15 +9,15 @@
         animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
       }
 
-      /* So'zlar x=400 dan boshlanadi. Bosh harf 100px */
+      /* So'zlar x=300 dan boshlanadi. Bosh harf 100px */
       .base-word {
         text-anchor: start;
         font-size: 100px; 
       }
 
-      /* Kichik harflar (ime, isk va h.k.) 70px */
+      /* Kichik harflar (ime, isk va h.k.) 90px */
       .base-word tspan {
-        font-size: 70px;
+        font-size: 90px;
       }
 
       /* Tepaga uchuvchi bosh harflar 100px */
@@ -86,32 +86,32 @@
       
       @keyframes flyStraightT {
         0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(-358px, -64px); }
+        100% { opacity: 1; transform: translate(-170px, -100px); }
       }
 
       @keyframes flyStraightR {
         0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(-229px, -142px); }
+        100% { opacity: 1; transform: translate(-80px, -240px); }
       }
 
       @keyframes flyStraightA {
         0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(-101px, -253px); }
+        100% { opacity: 1; transform: translate(60px, -360px); }
       }
 
       @keyframes flyStraightD {
         0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(28px, -375px); }
+        100% { opacity: 1; transform: translate(180px, -465px); }
       }
 
       @keyframes flyStraightE {
         0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(156px, -496px); }
+        100% { opacity: 1; transform: translate(290px, -600px); }
       }
 
       @keyframes flyStraightR2 {
         0% { opacity: 1; transform: translate(0, 0); }
-        100% { opacity: 1; transform: translate(285px, -589px); }
+        100% { opacity: 1; transform: translate(370px, -740px); }
       }
     </style>
   </defs>
@@ -121,22 +121,22 @@
 
   <!-- ================= PASTKI SO'ZLAR ================= -->
   <g class="base-word">
-    <text id="w-time" x="400" y="1050" class="glow">T<tspan id="ime">ime</tspan></text>
-    <text id="w-risk" x="400" y="1050" class="glow">R<tspan id="isk">isk</tspan></text>
-    <text id="w-analysis" x="400" y="1050" class="glow">A<tspan id="nalysis">nalysis</tspan></text>
-    <text id="w-discipline" x="400" y="1050" class="glow">D<tspan id="iscipline">iscipline</tspan></text>
-    <text id="w-emotion" x="400" y="1050" class="glow">E<tspan id="motion">motion</tspan></text>
-    <text id="w-reward" x="400" y="1050" class="glow">R<tspan id="eward">eward</tspan></text>
+    <text id="w-time" x="300" y="1100" class="glow">T<tspan id="ime">ime</tspan></text>
+    <text id="w-risk" x="300" y="1100" class="glow">R<tspan id="isk">isk</tspan></text>
+    <text id="w-analysis" x="300" y="1100" class="glow">A<tspan id="nalysis">nalysis</tspan></text>
+    <text id="w-discipline" x="300" y="1100" class="glow">D<tspan id="iscipline">iscipline</tspan></text>
+    <text id="w-emotion" x="300" y="1100" class="glow">E<tspan id="motion">motion</tspan></text>
+    <text id="w-reward" x="300" y="1100" class="glow">R<tspan id="eward">eward</tspan></text>
   </g>
 
   <!-- ================= TEPAGA UCHUVCHI HARFLAR ================= -->
   <g class="top-letter">
-    <text id="l-t"  x="400" y="1050" class="glow">T</text>
-    <text id="l-r"  x="400" y="1050" class="glow">R</text>
-    <text id="l-a"  x="400" y="1050" class="glow">A</text>
-    <text id="l-d"  x="400" y="1050" class="glow">D</text>
-    <text id="l-e"  x="400" y="1050" class="glow">E</text>
-    <text id="l-r2" x="400" y="1050" class="glow">R</text>
+    <text id="l-t"  x="300" y="1100" class="glow">T</text>
+    <text id="l-r"  x="300" y="1100" class="glow">R</text>
+    <text id="l-a"  x="300" y="1100" class="glow">A</text>
+    <text id="l-d"  x="300" y="1100" class="glow">D</text>
+    <text id="l-e"  x="300" y="1100" class="glow">E</text>
+    <text id="l-r2" x="300" y="1100" class="glow">R</text>
   </g>
 
 </svg>
